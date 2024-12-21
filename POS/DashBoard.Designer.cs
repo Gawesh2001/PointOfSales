@@ -56,6 +56,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(401, 1174);
             this.panel1.TabIndex = 0;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
@@ -170,12 +171,13 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(1700, 1078);
             this.panel3.TabIndex = 1;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(2044, 1055);
+            this.ClientSize = new System.Drawing.Size(1924, 1055);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Name = "DashBoard";
