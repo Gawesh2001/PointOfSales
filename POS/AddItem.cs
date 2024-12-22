@@ -24,15 +24,7 @@ namespace POS
 
         }
 
-        private void richTextBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+     
 
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
@@ -145,7 +137,7 @@ namespace POS
                         if (result > 0) 
                         {
                             MessageBox.Show("Succesfully Stock Added");
-                            this.Refresh();
+                            this.Refresh
                         }
                         else
                         {
@@ -163,6 +155,15 @@ namespace POS
                     conn.Close();
                 }
             }
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+        
+
+        private void textBox2_TextChanged_1(object sender, EventArgs e)
+        {
 
         }
     }

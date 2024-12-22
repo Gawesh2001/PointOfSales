@@ -270,9 +270,9 @@
             this.panel3.Controls.Add(this.textBox4);
             this.panel3.Controls.Add(this.label6);
             this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(160, 154);
+            this.panel3.Location = new System.Drawing.Point(0, 85);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1393, 649);
+            this.panel3.Size = new System.Drawing.Size(1642, 800);
             this.panel3.TabIndex = 21;
             // 
             // label11
@@ -294,7 +294,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.panel4.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.panel4.Controls.Add(this.button5);
             this.panel4.Controls.Add(this.textBox3);
             this.panel4.Controls.Add(this.textBox2);
@@ -313,6 +313,7 @@
             this.button5.TabIndex = 24;
             this.button5.Text = "Update";
             this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // textBox3
             // 
@@ -327,6 +328,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(100, 22);
             this.textBox2.TabIndex = 2;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged_1);
             // 
             // label10
             // 
