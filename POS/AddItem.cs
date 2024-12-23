@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Xml.Linq;
+using System.Collections;
 
 namespace POS
 {
@@ -17,8 +18,9 @@ namespace POS
         public AddItem()
         {
             InitializeComponent();
+            
         }
-
+        public String connectionString = "Data Source=APSARA;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
         private void AddItem_Load(object sender, EventArgs e)
         {
 
@@ -111,7 +113,7 @@ namespace POS
 
 
 
-            String connectionString = "Data Source=APSARA;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+            
                                        
             String query = "INSERT INTO Products (bar_code , p_category , p_name , quantity , expire_date , p_cost , p_price) VALUES (@bar_code , @p_category , @p_name , @quentity ,@expire_date , @p_cost , @p_price) ";
 
@@ -137,7 +139,7 @@ namespace POS
                         if (result > 0) 
                         {
                             MessageBox.Show("Succesfully Stock Added");
-                            this.Refresh
+                            this.Refresh();
                         }
                         else
                         {
@@ -158,9 +160,83 @@ namespace POS
 
         }
 
+
+
+        // Update Part
+
+
         private void button5_Click(object sender, EventArgs e)
         {
-        
+            string categoryCode = textBox2.Text;
+            string categoryName = textBox3.Text;
+
+
+          
+            String Query = "INSERT INTO category ( category_code,category_name) VALUES(@c_code,@c_name)";
+
+            using (SqlConnection Conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    Conn.Open();
+                    using (SqlCommand cmdD = new SqlCommand(Query, Conn))
+                    {
+
+                        cmdD.Parameters.AddWithValue("@c_code", categoryCode);
+                        cmdD.Parameters.AddWithValue("@c_name", categoryName);
+
+                        int result = cmdD.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            DialogResult dialogResult = MessageBox.Show("Updated");
+                            this.Refresh();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Faild");
+                        }
+
+                    }
+
+
+
+
+
+
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("An Error Occued" + ex.Message);
+                }
+                finally
+                {
+                    Conn.Close();
+                }
+
+
+
+
+
+
+
+            }
+        }
+
+               
+            
+
+
+
+
+
+
+            
+
+
+
+
+
+
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
         {
