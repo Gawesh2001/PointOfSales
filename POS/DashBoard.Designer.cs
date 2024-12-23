@@ -107,7 +107,7 @@
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(362, 76);
             this.button3.TabIndex = 4;
-            this.button3.Text = "    Billing Area";
+            this.button3.Text = "    Stock Check";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.UseVisualStyleBackColor = true;
             // 
