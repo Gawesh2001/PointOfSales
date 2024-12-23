@@ -199,11 +199,6 @@ namespace POS
 
                     }
 
-
-
-
-
-
                 } catch (Exception ex)
                 {
                     MessageBox.Show("An Error Occued" + ex.Message);
@@ -212,30 +207,8 @@ namespace POS
                 {
                     Conn.Close();
                 }
-
-
-
-
-
-
-
             }
         }
-
-               
-            
-
-
-
-
-
-
-            
-
-
-
-
-
 
 
         private void textBox2_TextChanged_1(object sender, EventArgs e)
