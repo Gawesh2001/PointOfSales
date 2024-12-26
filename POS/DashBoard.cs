@@ -19,10 +19,13 @@ namespace POS
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Workspace workspaceForm = new Workspace() { TopLevel = false, TopMost = true };
-            workspaceForm.FormBorderStyle = FormBorderStyle.None;
-            panel3.Controls.Add(workspaceForm);
-            workspaceForm.Show();
+            //Workspace workspaceForm = new Workspace() { TopLevel = false, TopMost = true };
+            //workspaceForm.FormBorderStyle = FormBorderStyle.None;
+            //panel3.Controls.Add(workspaceForm);
+            //workspaceForm.Show();
+
+            Workspace workspace = new Workspace();
+            workspace.Show();
         }
 
         private void button4_Click(object sender, EventArgs e)

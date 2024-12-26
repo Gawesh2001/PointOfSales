@@ -20,7 +20,8 @@ namespace POS
             InitializeComponent();
             
         }
-        public String connectionString = "Data Source=APSARA;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+        //public String connectionString = "Data Source=APSARA;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+        public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
         private void AddItem_Load(object sender, EventArgs e)
         {
 
@@ -105,11 +106,11 @@ namespace POS
             DateTime expire_date = dateTimePicker1.Value;
 
 
-            int p_cost;
-            if (int.TryParse(textBox4.Text, out p_cost)) { };
+            decimal p_cost;
+            if (decimal.TryParse(textBox4.Text, out p_cost)) { };
 
-            int p_price;
-            if (int.TryParse(textBox5.Text, out p_price)) { };
+            decimal p_price;
+            if (decimal.TryParse(textBox5.Text, out p_price)) { };
 
 
 
@@ -497,6 +498,10 @@ namespace POS
             }
         }
 
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

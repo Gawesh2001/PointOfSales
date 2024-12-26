@@ -293,6 +293,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(153, 22);
             this.textBox8.TabIndex = 25;
+            this.textBox8.TextChanged += new System.EventHandler(this.textBox8_TextChanged);
             this.textBox8.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox8_KeyDown);
             this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
             // 

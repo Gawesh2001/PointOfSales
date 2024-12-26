@@ -31,8 +31,8 @@ namespace POS
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
@@ -59,14 +59,22 @@ namespace POS
             this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
+            this.listBox5 = new System.Windows.Forms.ListBox();
+            this.listBox4 = new System.Windows.Forms.ListBox();
+            this.listBox3 = new System.Windows.Forms.ListBox();
+            this.listBox2 = new System.Windows.Forms.ListBox();
+            this.listBox1 = new System.Windows.Forms.ListBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox3 = new System.Windows.Forms.TextBox();
             this.billGridView = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewImageColumn();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -117,12 +125,13 @@ namespace POS
             this.button10.BackgroundImage = global::POS.Properties.Resources.icons8_add_50;
             this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Location = new System.Drawing.Point(1450, 8);
+            this.button10.Location = new System.Drawing.Point(1364, 8);
             this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(80, 72);
             this.button10.TabIndex = 6;
             this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
             // 
             // button9
             // 
@@ -130,12 +139,13 @@ namespace POS
             this.button9.BackgroundImage = global::POS.Properties.Resources.icons8_home_50;
             this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(1708, 8);
+            this.button9.Location = new System.Drawing.Point(1622, 8);
             this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(80, 72);
             this.button9.TabIndex = 5;
             this.button9.UseVisualStyleBackColor = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 
@@ -143,7 +153,7 @@ namespace POS
             this.button8.BackgroundImage = global::POS.Properties.Resources.icons8_pause_50;
             this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Location = new System.Drawing.Point(1536, 8);
+            this.button8.Location = new System.Drawing.Point(1450, 8);
             this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(80, 72);
@@ -156,12 +166,13 @@ namespace POS
             this.button7.BackgroundImage = global::POS.Properties.Resources.icons8_sign_out_50;
             this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Location = new System.Drawing.Point(1801, 8);
+            this.button7.Location = new System.Drawing.Point(1708, 8);
             this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(80, 72);
             this.button7.TabIndex = 3;
             this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
             // button6
             // 
@@ -169,12 +180,13 @@ namespace POS
             this.button6.BackgroundImage = global::POS.Properties.Resources.icons8_cancel_50__1_;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(1622, 8);
+            this.button6.Location = new System.Drawing.Point(1536, 8);
             this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(80, 72);
             this.button6.TabIndex = 2;
             this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // comboBox4
             // 
@@ -423,16 +435,112 @@ namespace POS
             this.panel1.Padding = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.panel1.Size = new System.Drawing.Size(1244, 742);
             this.panel1.TabIndex = 2;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel6
             // 
-            this.panel6.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel6.Controls.Add(this.listBox5);
+            this.panel6.Controls.Add(this.listBox4);
+            this.panel6.Controls.Add(this.listBox3);
+            this.panel6.Controls.Add(this.listBox2);
+            this.panel6.Controls.Add(this.listBox1);
+            this.panel6.Controls.Add(this.textBox7);
+            this.panel6.Controls.Add(this.textBox6);
+            this.panel6.Controls.Add(this.textBox5);
+            this.panel6.Controls.Add(this.textBox4);
+            this.panel6.Controls.Add(this.textBox3);
             this.panel6.Controls.Add(this.billGridView);
-            this.panel6.Location = new System.Drawing.Point(30, 73);
+            this.panel6.Location = new System.Drawing.Point(59, 71);
             this.panel6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1200, 519);
+            this.panel6.Size = new System.Drawing.Size(1180, 519);
             this.panel6.TabIndex = 8;
+            // 
+            // listBox5
+            // 
+            this.listBox5.FormattingEnabled = true;
+            this.listBox5.ItemHeight = 16;
+            this.listBox5.Location = new System.Drawing.Point(1067, 67);
+            this.listBox5.Name = "listBox5";
+            this.listBox5.Size = new System.Drawing.Size(106, 436);
+            this.listBox5.TabIndex = 22;
+            // 
+            // listBox4
+            // 
+            this.listBox4.FormattingEnabled = true;
+            this.listBox4.ItemHeight = 16;
+            this.listBox4.Location = new System.Drawing.Point(857, 67);
+            this.listBox4.Name = "listBox4";
+            this.listBox4.Size = new System.Drawing.Size(205, 436);
+            this.listBox4.TabIndex = 21;
+            // 
+            // listBox3
+            // 
+            this.listBox3.FormattingEnabled = true;
+            this.listBox3.ItemHeight = 16;
+            this.listBox3.Location = new System.Drawing.Point(698, 67);
+            this.listBox3.Name = "listBox3";
+            this.listBox3.Size = new System.Drawing.Size(153, 436);
+            this.listBox3.TabIndex = 20;
+            // 
+            // listBox2
+            // 
+            this.listBox2.FormattingEnabled = true;
+            this.listBox2.ItemHeight = 16;
+            this.listBox2.Location = new System.Drawing.Point(165, 67);
+            this.listBox2.Name = "listBox2";
+            this.listBox2.Size = new System.Drawing.Size(527, 436);
+            this.listBox2.TabIndex = 19;
+            // 
+            // listBox1
+            // 
+            this.listBox1.FormattingEnabled = true;
+            this.listBox1.ItemHeight = 16;
+            this.listBox1.Location = new System.Drawing.Point(3, 67);
+            this.listBox1.Name = "listBox1";
+            this.listBox1.Size = new System.Drawing.Size(156, 436);
+            this.listBox1.TabIndex = 18;
+            // 
+            // textBox7
+            // 
+            this.textBox7.Location = new System.Drawing.Point(1067, 39);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(110, 22);
+            this.textBox7.TabIndex = 13;
+            this.textBox7.Text = " ";
+            this.textBox7.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox7_KeyDown);
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
+            // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(857, 39);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(205, 22);
+            this.textBox6.TabIndex = 12;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(698, 39);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(153, 22);
+            this.textBox5.TabIndex = 11;
+            this.textBox5.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox5_KeyDown);
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(165, 39);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(527, 22);
+            this.textBox4.TabIndex = 10;
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(3, 39);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(156, 22);
+            this.textBox3.TabIndex = 9;
+            this.textBox3.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox3_KeyDown);
             // 
             // billGridView
             // 
@@ -442,31 +550,29 @@ namespace POS
             this.billGridView.AllowUserToResizeRows = false;
             this.billGridView.BackgroundColor = System.Drawing.Color.White;
             this.billGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.billGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.billGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.billGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.billGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
             this.Column2,
             this.Column3,
             this.Column4,
             this.Column5,
-            this.Column6,
-            this.Column7});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.billGridView.DefaultCellStyle = dataGridViewCellStyle4;
+            this.Column6});
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.billGridView.DefaultCellStyle = dataGridViewCellStyle12;
             this.billGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.billGridView.GridColor = System.Drawing.SystemColors.ControlText;
             this.billGridView.Location = new System.Drawing.Point(0, 0);
@@ -477,20 +583,13 @@ namespace POS
             this.billGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders;
             this.billGridView.ScrollBars = System.Windows.Forms.ScrollBars.None;
             this.billGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.billGridView.Size = new System.Drawing.Size(1200, 519);
+            this.billGridView.Size = new System.Drawing.Size(1180, 519);
             this.billGridView.TabIndex = 7;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "#";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Column1.Width = 60;
+            this.billGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.billGridView_CellContentClick);
             // 
             // Column2
             // 
-            this.Column2.HeaderText = "ID";
+            this.Column2.HeaderText = "P_Code";
             this.Column2.MinimumWidth = 6;
             this.Column2.Name = "Column2";
             this.Column2.Resizable = System.Windows.Forms.DataGridViewTriState.False;
@@ -514,55 +613,48 @@ namespace POS
             // 
             // Column5
             // 
-            this.Column5.HeaderText = "Unit";
+            this.Column5.HeaderText = "Unit Price";
             this.Column5.MinimumWidth = 6;
             this.Column5.Name = "Column5";
             this.Column5.Width = 155;
             // 
             // Column6
             // 
-            this.Column6.HeaderText = "Subtotal";
+            this.Column6.HeaderText = "Sub Total";
             this.Column6.MinimumWidth = 6;
             this.Column6.Name = "Column6";
             this.Column6.Width = 240;
             // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "";
-            this.Column7.Image = global::POS.Properties.Resources.icons8_cancel_30;
-            this.Column7.MinimumWidth = 6;
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 105;
-            // 
             // button2
             // 
             this.button2.Image = global::POS.Properties.Resources.icons8_add_30__1_;
-            this.button2.Location = new System.Drawing.Point(1165, 13);
+            this.button2.Location = new System.Drawing.Point(1187, 11);
             this.button2.Margin = new System.Windows.Forms.Padding(0);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(45, 36);
             this.button2.TabIndex = 6;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label2.Image = global::POS.Properties.Resources.icons8_barcode_30;
-            this.label2.Location = new System.Drawing.Point(670, 13);
+            this.label2.Location = new System.Drawing.Point(983, 11);
             this.label2.Margin = new System.Windows.Forms.Padding(0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(45, 36);
+            this.label2.Size = new System.Drawing.Size(106, 36);
             this.label2.TabIndex = 5;
+            this.label2.Text = "Available Quantity";
             // 
             // textBox2
             // 
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBox2.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.textBox2.Location = new System.Drawing.Point(715, 13);
+            this.textBox2.Location = new System.Drawing.Point(1101, 11);
             this.textBox2.Margin = new System.Windows.Forms.Padding(0);
             this.textBox2.Multiline = true;
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(450, 36);
+            this.textBox2.Size = new System.Drawing.Size(64, 36);
             this.textBox2.TabIndex = 4;
             // 
             // button1
@@ -630,7 +722,7 @@ namespace POS
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(465, 34);
+            this.label9.Location = new System.Drawing.Point(459, 28);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 31);
             this.label9.TabIndex = 6;
@@ -715,6 +807,7 @@ namespace POS
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Workspace";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.Workspace_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
@@ -725,6 +818,7 @@ namespace POS
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.billGridView)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -754,13 +848,6 @@ namespace POS
         private Label label3;
         private TextBox txtDiscount;
         private Label label9;
-        private DataGridViewTextBoxColumn Column1;
-        private DataGridViewTextBoxColumn Column2;
-        private DataGridViewTextBoxColumn Column3;
-        private DataGridViewTextBoxColumn Column4;
-        private DataGridViewTextBoxColumn Column5;
-        private DataGridViewTextBoxColumn Column6;
-        private DataGridViewImageColumn Column7;
         private Panel panel7;
         private ComboBox comboBox2;
         private ComboBox comboBox1;
@@ -782,5 +869,20 @@ namespace POS
         private Button button8;
         private Button button9;
         private Button button10;
+        private TextBox textBox7;
+        private TextBox textBox6;
+        private TextBox textBox5;
+        private TextBox textBox4;
+        private TextBox textBox3;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Column6;
+        private ListBox listBox1;
+        private ListBox listBox5;
+        private ListBox listBox4;
+        private ListBox listBox3;
+        private ListBox listBox2;
     }
 }
