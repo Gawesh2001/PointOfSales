@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
+
 namespace POS
 {
     public partial class Workspace : Form
@@ -54,8 +55,14 @@ namespace POS
             {
                 txtDiscount.ForeColor = Color.Black;
             }
+
+
+
+
         }
 
+
+        
 
         public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
         private double CalculateTotal(double currentTotal, string discountType, double discountAmount)
