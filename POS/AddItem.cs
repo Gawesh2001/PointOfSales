@@ -180,7 +180,7 @@ namespace POS
                             }
                             else
                             {
-                                MessageBox.Show("Faild");
+                               MessageBox.Show("Faild");
                             }
 
 
