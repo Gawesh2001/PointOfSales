@@ -52,17 +52,19 @@
             this.panel1.Controls.Add(this.button1);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(-3, -9);
+            this.panel1.Location = new System.Drawing.Point(-3, -11);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(401, 1174);
+            this.panel1.Size = new System.Drawing.Size(451, 1468);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel2
             // 
-            this.panel2.Location = new System.Drawing.Point(407, 12);
+            this.panel2.Location = new System.Drawing.Point(458, 15);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1478, 1069);
+            this.panel2.Size = new System.Drawing.Size(1663, 1336);
             this.panel2.TabIndex = 1;
             // 
             // button5
@@ -72,9 +74,10 @@
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button5.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(19, 721);
+            this.button5.Location = new System.Drawing.Point(21, 901);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(362, 76);
+            this.button5.Size = new System.Drawing.Size(407, 95);
             this.button5.TabIndex = 6;
             this.button5.Text = "    Billing Area";
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -87,9 +90,10 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(19, 475);
+            this.button4.Location = new System.Drawing.Point(21, 594);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(362, 76);
+            this.button4.Size = new System.Drawing.Size(407, 95);
             this.button4.TabIndex = 5;
             this.button4.Text = "    Add Items";
             this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -103,9 +107,10 @@
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button3.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(19, 639);
+            this.button3.Location = new System.Drawing.Point(21, 799);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(362, 76);
+            this.button3.Size = new System.Drawing.Size(407, 95);
             this.button3.TabIndex = 4;
             this.button3.Text = "    Stock Check";
             this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -118,13 +123,15 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(19, 557);
+            this.button2.Location = new System.Drawing.Point(21, 696);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(362, 76);
+            this.button2.Size = new System.Drawing.Size(407, 95);
             this.button2.TabIndex = 3;
             this.button2.Text = "    Reports";
             this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // button1
             // 
@@ -133,9 +140,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Bahnschrift", 22.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(19, 103);
+            this.button1.Location = new System.Drawing.Point(21, 129);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(362, 76);
+            this.button1.Size = new System.Drawing.Size(407, 95);
             this.button1.TabIndex = 2;
             this.button1.Text = "    Billing Area";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -147,9 +155,9 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(20, 401);
+            this.label2.Location = new System.Drawing.Point(22, 501);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(275, 50);
+            this.label2.Size = new System.Drawing.Size(335, 60);
             this.label2.TabIndex = 1;
             this.label2.Text = "Admin Panel";
             // 
@@ -158,28 +166,30 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Showcard Gothic", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(20, 38);
+            this.label1.Location = new System.Drawing.Point(22, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(314, 50);
+            this.label1.Size = new System.Drawing.Size(380, 60);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cashire Panel";
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Gainsboro;
-            this.panel3.Location = new System.Drawing.Point(394, -6);
+            this.panel3.Location = new System.Drawing.Point(443, -8);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1700, 1078);
+            this.panel3.Size = new System.Drawing.Size(1912, 1348);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // DashBoard
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1924, 1055);
+            this.ClientSize = new System.Drawing.Size(2164, 1319);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "DashBoard";
             this.ShowIcon = false;
             this.Text = "DashBoard";

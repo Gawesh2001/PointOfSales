@@ -50,5 +50,16 @@ namespace POS
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            
+            SalesReport salesReportForm = new SalesReport() { TopLevel = false, TopMost = true };
+            salesReportForm.FormBorderStyle = FormBorderStyle.None;
+            panel3.Controls.Add(salesReportForm);
+            salesReportForm.Show();
+
+          
+        }
     }
 }
