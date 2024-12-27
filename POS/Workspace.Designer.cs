@@ -31,9 +31,13 @@ namespace POS
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
@@ -43,16 +47,22 @@ namespace POS
             this.label10 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
+            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel7 = new System.Windows.Forms.Panel();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -82,6 +92,7 @@ namespace POS
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.textBox8 = new System.Windows.Forms.TextBox();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
@@ -90,11 +101,13 @@ namespace POS
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.label15 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel7.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -105,6 +118,9 @@ namespace POS
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel2.Controls.Add(this.comboBox5);
+            this.panel2.Controls.Add(this.label15);
+            this.panel2.Controls.Add(this.panel7);
             this.panel2.Controls.Add(this.button10);
             this.panel2.Controls.Add(this.button9);
             this.panel2.Controls.Add(this.button8);
@@ -118,6 +134,61 @@ namespace POS
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1902, 84);
             this.panel2.TabIndex = 1;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel7.Controls.Add(this.comboBox3);
+            this.panel7.Controls.Add(this.comboBox2);
+            this.panel7.Controls.Add(this.comboBox1);
+            this.panel7.Location = new System.Drawing.Point(718, 11);
+            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(631, 55);
+            this.panel7.TabIndex = 1;
+            this.panel7.Visible = false;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.BackColor = System.Drawing.Color.White;
+            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.comboBox3.ForeColor = System.Drawing.Color.Black;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.ItemHeight = 31;
+            this.comboBox3.Location = new System.Drawing.Point(408, 12);
+            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(206, 39);
+            this.comboBox3.TabIndex = 5;
+            this.comboBox3.Text = "All Products";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.BackColor = System.Drawing.Color.White;
+            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.comboBox2.ForeColor = System.Drawing.Color.Black;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.ItemHeight = 31;
+            this.comboBox2.Location = new System.Drawing.Point(210, 12);
+            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(182, 39);
+            this.comboBox2.TabIndex = 4;
+            this.comboBox2.Text = "All Brands";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.BackColor = System.Drawing.Color.White;
+            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
+            this.comboBox1.ForeColor = System.Drawing.Color.Black;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.ItemHeight = 31;
+            this.comboBox1.Location = new System.Drawing.Point(12, 12);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(182, 39);
+            this.comboBox1.TabIndex = 3;
+            this.comboBox1.Text = "All Categries";
             // 
             // button10
             // 
@@ -192,6 +263,10 @@ namespace POS
             // 
             this.comboBox4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Station 01",
+            "Station 02",
+            "Station 03"});
             this.comboBox4.Location = new System.Drawing.Point(31, 30);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboBox4.Name = "comboBox4";
@@ -205,14 +280,13 @@ namespace POS
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(31, 5);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(94, 28);
+            this.label10.Size = new System.Drawing.Size(75, 28);
             this.label10.TabIndex = 0;
-            this.label10.Text = "Location:";
+            this.label10.Text = "Station";
             // 
             // panel3
             // 
             this.panel3.Controls.Add(this.panel8);
-            this.panel3.Controls.Add(this.panel7);
             this.panel3.Controls.Add(this.panel5);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
             this.panel3.Location = new System.Drawing.Point(1235, 84);
@@ -223,12 +297,166 @@ namespace POS
             // 
             // panel8
             // 
+            this.panel8.Controls.Add(this.checkBox2);
+            this.panel8.Controls.Add(this.checkBox1);
+            this.panel8.Controls.Add(this.button11);
+            this.panel8.Controls.Add(this.label14);
+            this.panel8.Controls.Add(this.textBox13);
+            this.panel8.Controls.Add(this.label13);
+            this.panel8.Controls.Add(this.textBox12);
+            this.panel8.Controls.Add(this.label12);
+            this.panel8.Controls.Add(this.textBox11);
+            this.panel8.Controls.Add(this.textBox10);
+            this.panel8.Controls.Add(this.textBox9);
+            this.panel8.Controls.Add(this.label11);
+            this.panel8.Controls.Add(this.label7);
+            this.panel8.Controls.Add(this.label5);
             this.panel8.Controls.Add(this.dataGridView1);
-            this.panel8.Location = new System.Drawing.Point(15, 82);
+            this.panel8.Location = new System.Drawing.Point(10, 42);
             this.panel8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(631, 498);
+            this.panel8.Size = new System.Drawing.Size(618, 579);
             this.panel8.TabIndex = 2;
+            // 
+            // checkBox2
+            // 
+            this.checkBox2.AutoSize = true;
+            this.checkBox2.Location = new System.Drawing.Point(444, 360);
+            this.checkBox2.Name = "checkBox2";
+            this.checkBox2.Size = new System.Drawing.Size(58, 20);
+            this.checkBox2.TabIndex = 21;
+            this.checkBox2.Text = "Card";
+            this.checkBox2.UseVisualStyleBackColor = true;
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(305, 360);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(60, 20);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.Text = "Cash";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Red;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Image = global::POS.Properties.Resources.icons8_transition_both_directions_50;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(377, 460);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Name = "button11";
+            this.button11.Padding = new System.Windows.Forms.Padding(15, 4, 5, 4);
+            this.button11.Size = new System.Drawing.Size(209, 104);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "    Pay";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.ForeColor = System.Drawing.Color.Black;
+            this.label14.Location = new System.Drawing.Point(30, 349);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(198, 31);
+            this.label14.TabIndex = 19;
+            this.label14.Text = "Payment Method";
+            // 
+            // textBox13
+            // 
+            this.textBox13.Location = new System.Drawing.Point(291, 296);
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(181, 22);
+            this.textBox13.TabIndex = 18;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.ForeColor = System.Drawing.Color.Black;
+            this.label13.Location = new System.Drawing.Point(36, 287);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(97, 31);
+            this.label13.TabIndex = 17;
+            this.label13.Text = "Balance";
+            // 
+            // textBox12
+            // 
+            this.textBox12.Location = new System.Drawing.Point(291, 247);
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(181, 22);
+            this.textBox12.TabIndex = 16;
+            this.textBox12.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox12_KeyPress);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.Black;
+            this.label12.Location = new System.Drawing.Point(36, 238);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(188, 31);
+            this.label12.TabIndex = 15;
+            this.label12.Text = "Recieve Amount";
+            // 
+            // textBox11
+            // 
+            this.textBox11.Location = new System.Drawing.Point(291, 196);
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(181, 22);
+            this.textBox11.TabIndex = 14;
+            // 
+            // textBox10
+            // 
+            this.textBox10.Location = new System.Drawing.Point(291, 142);
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(181, 22);
+            this.textBox10.TabIndex = 13;
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(291, 93);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(181, 22);
+            this.textBox9.TabIndex = 12;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.Color.Black;
+            this.label11.Location = new System.Drawing.Point(36, 187);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(161, 31);
+            this.label11.TabIndex = 11;
+            this.label11.Text = "Total Amount";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.Black;
+            this.label7.Location = new System.Drawing.Point(36, 133);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(110, 31);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Discount";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(36, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(144, 31);
+            this.label5.TabIndex = 9;
+            this.label5.Text = "Bill Amount";
             // 
             // dataGridView1
             // 
@@ -237,11 +465,7 @@ namespace POS
             this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12});
+            this.Column8});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.GridColor = System.Drawing.SystemColors.WindowText;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -252,107 +476,18 @@ namespace POS
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.dataGridView1.Size = new System.Drawing.Size(631, 498);
+            this.dataGridView1.Size = new System.Drawing.Size(618, 579);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column8
             // 
             this.Column8.Frozen = true;
-            this.Column8.HeaderText = "#";
+            this.Column8.HeaderText = "Payemts";
             this.Column8.MinimumWidth = 6;
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Width = 60;
-            // 
-            // Column9
-            // 
-            this.Column9.Frozen = true;
-            this.Column9.HeaderText = "ID";
-            this.Column9.MinimumWidth = 6;
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            this.Column9.Width = 125;
-            // 
-            // Column10
-            // 
-            this.Column10.Frozen = true;
-            this.Column10.HeaderText = "Product";
-            this.Column10.MinimumWidth = 6;
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            this.Column10.Width = 220;
-            // 
-            // Column11
-            // 
-            this.Column11.Frozen = true;
-            this.Column11.HeaderText = "Unit";
-            this.Column11.MinimumWidth = 6;
-            this.Column11.Name = "Column11";
-            this.Column11.ReadOnly = true;
-            this.Column11.Width = 130;
-            // 
-            // Column12
-            // 
-            this.Column12.Frozen = true;
-            this.Column12.HeaderText = "Stock";
-            this.Column12.MinimumWidth = 6;
-            this.Column12.Name = "Column12";
-            this.Column12.ReadOnly = true;
-            this.Column12.Width = 125;
-            // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.SystemColors.Highlight;
-            this.panel7.Controls.Add(this.comboBox3);
-            this.panel7.Controls.Add(this.comboBox2);
-            this.panel7.Controls.Add(this.comboBox1);
-            this.panel7.Location = new System.Drawing.Point(15, 13);
-            this.panel7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(631, 55);
-            this.panel7.TabIndex = 1;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.BackColor = System.Drawing.Color.White;
-            this.comboBox3.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox3.ForeColor = System.Drawing.Color.Black;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.ItemHeight = 31;
-            this.comboBox3.Location = new System.Drawing.Point(408, 12);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(206, 39);
-            this.comboBox3.TabIndex = 5;
-            this.comboBox3.Text = "All Products";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.BackColor = System.Drawing.Color.White;
-            this.comboBox2.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox2.ForeColor = System.Drawing.Color.Black;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.ItemHeight = 31;
-            this.comboBox2.Location = new System.Drawing.Point(210, 12);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(182, 39);
-            this.comboBox2.TabIndex = 4;
-            this.comboBox2.Text = "All Brands";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.BackColor = System.Drawing.Color.White;
-            this.comboBox1.Font = new System.Drawing.Font("Segoe UI", 13.8F);
-            this.comboBox1.ForeColor = System.Drawing.Color.Black;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.ItemHeight = 31;
-            this.comboBox1.Location = new System.Drawing.Point(12, 12);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(182, 39);
-            this.comboBox1.TabIndex = 3;
-            this.comboBox1.Text = "All Categries";
+            this.Column8.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.Column8.Width = 800;
             // 
             // panel5
             // 
@@ -375,14 +510,15 @@ namespace POS
             this.button5.ForeColor = System.Drawing.Color.White;
             this.button5.Image = global::POS.Properties.Resources.icons8_transition_both_directions_50;
             this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(441, 15);
+            this.button5.Location = new System.Drawing.Point(10, 15);
             this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button5.Name = "button5";
             this.button5.Padding = new System.Windows.Forms.Padding(15, 4, 5, 4);
-            this.button5.Size = new System.Drawing.Size(194, 104);
+            this.button5.Size = new System.Drawing.Size(209, 104);
             this.button5.TabIndex = 2;
-            this.button5.Text = "     Pay";
+            this.button5.Text = "    Close";
             this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // button4
             // 
@@ -392,7 +528,7 @@ namespace POS
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = global::POS.Properties.Resources.icons8_card_50;
             this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(236, 14);
+            this.button4.Location = new System.Drawing.Point(423, 15);
             this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button4.Name = "button4";
             this.button4.Padding = new System.Windows.Forms.Padding(10, 4, 5, 4);
@@ -400,6 +536,7 @@ namespace POS
             this.button4.TabIndex = 1;
             this.button4.Text = "     Card";
             this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // button3
             // 
@@ -409,7 +546,7 @@ namespace POS
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.Image = global::POS.Properties.Resources.icons8_dollar_45;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(31, 14);
+            this.button3.Location = new System.Drawing.Point(225, 16);
             this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button3.Name = "button3";
             this.button3.Padding = new System.Windows.Forms.Padding(5, 4, 0, 4);
@@ -417,6 +554,7 @@ namespace POS
             this.button3.TabIndex = 0;
             this.button3.Text = "   Cash";
             this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // panel1
             // 
@@ -550,14 +688,14 @@ namespace POS
             this.billGridView.AllowUserToResizeRows = false;
             this.billGridView.BackgroundColor = System.Drawing.Color.White;
             this.billGridView.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.billGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.billGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.billGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.billGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column2,
@@ -565,14 +703,14 @@ namespace POS
             this.Column4,
             this.Column5,
             this.Column6});
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.billGridView.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.billGridView.DefaultCellStyle = dataGridViewCellStyle10;
             this.billGridView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.billGridView.GridColor = System.Drawing.SystemColors.ControlText;
             this.billGridView.Location = new System.Drawing.Point(0, 0);
@@ -691,6 +829,7 @@ namespace POS
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.SystemColors.Highlight;
+            this.panel4.Controls.Add(this.textBox8);
             this.panel4.Controls.Add(this.txtDiscount);
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.lblTotal);
@@ -706,23 +845,33 @@ namespace POS
             this.panel4.Size = new System.Drawing.Size(1234, 128);
             this.panel4.TabIndex = 0;
             // 
+            // textBox8
+            // 
+            this.textBox8.Location = new System.Drawing.Point(679, 76);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(156, 22);
+            this.textBox8.TabIndex = 8;
+            this.textBox8.UseSystemPasswordChar = true;
+            this.textBox8.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox8_KeyPress);
+            // 
             // txtDiscount
             // 
             this.txtDiscount.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtDiscount.Font = new System.Drawing.Font("Segoe UI Semibold", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiscount.Location = new System.Drawing.Point(465, 61);
+            this.txtDiscount.Location = new System.Drawing.Point(516, 76);
             this.txtDiscount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDiscount.Multiline = true;
             this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(349, 37);
+            this.txtDiscount.Size = new System.Drawing.Size(92, 37);
             this.txtDiscount.TabIndex = 7;
+            this.txtDiscount.TextChanged += new System.EventHandler(this.txtDiscount_TextChanged);
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(459, 28);
+            this.label9.Location = new System.Drawing.Point(510, 33);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(110, 31);
             this.label9.TabIndex = 6;
@@ -744,7 +893,7 @@ namespace POS
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(955, 29);
+            this.label8.Location = new System.Drawing.Point(960, 15);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(161, 31);
             this.label8.TabIndex = 4;
@@ -755,29 +904,30 @@ namespace POS
             this.lblItemCount.AutoSize = true;
             this.lblItemCount.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblItemCount.ForeColor = System.Drawing.Color.White;
-            this.lblItemCount.Location = new System.Drawing.Point(261, 58);
+            this.lblItemCount.Location = new System.Drawing.Point(305, 61);
             this.lblItemCount.Name = "lblItemCount";
             this.lblItemCount.Size = new System.Drawing.Size(92, 31);
             this.lblItemCount.TabIndex = 3;
             this.lblItemCount.Text = "000000";
+            this.lblItemCount.Visible = false;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Segoe UI", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(261, 34);
+            this.label6.Location = new System.Drawing.Point(676, 54);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(128, 31);
+            this.label6.Size = new System.Drawing.Size(159, 17);
             this.label6.TabIndex = 2;
-            this.label6.Text = "# of items:";
+            this.label6.Text = "Enter dicsount password";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(24, 58);
+            this.label4.Location = new System.Drawing.Point(80, 61);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(131, 31);
             this.label4.TabIndex = 1;
@@ -788,11 +938,38 @@ namespace POS
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(24, 34);
+            this.label3.Location = new System.Drawing.Point(80, 16);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 31);
             this.label3.TabIndex = 0;
             this.label3.Text = "Bill ID:";
+            // 
+            // comboBox5
+            // 
+            this.comboBox5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox5.FormattingEnabled = true;
+            this.comboBox5.Items.AddRange(new object[] {
+            "Gawesh",
+            "Harini",
+            "Apsara",
+            "Tharunethu"});
+            this.comboBox5.Location = new System.Drawing.Point(342, 30);
+            this.comboBox5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboBox5.Name = "comboBox5";
+            this.comboBox5.Size = new System.Drawing.Size(271, 36);
+            this.comboBox5.TabIndex = 7;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.White;
+            this.label15.Location = new System.Drawing.Point(337, 5);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(143, 28);
+            this.label15.TabIndex = 8;
+            this.label15.Text = "Cashier Name:";
+            this.label15.Click += new System.EventHandler(this.label15_Click);
             // 
             // Workspace
             // 
@@ -810,10 +987,11 @@ namespace POS
             this.Load += new System.EventHandler(this.Workspace_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel7.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -854,11 +1032,6 @@ namespace POS
         private ComboBox comboBox3;
         private Panel panel8;
         private DataGridView dataGridView1;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
-        private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Column11;
-        private DataGridViewTextBoxColumn Column12;
         private Button button3;
         private Button button5;
         private Button button4;
@@ -884,5 +1057,23 @@ namespace POS
         private ListBox listBox4;
         private ListBox listBox3;
         private ListBox listBox2;
+        private DataGridViewTextBoxColumn Column8;
+        private TextBox textBox8;
+        private Label label7;
+        private Label label5;
+        private Label label11;
+        private TextBox textBox11;
+        private TextBox textBox10;
+        private TextBox textBox9;
+        private TextBox textBox12;
+        private Label label12;
+        private Button button11;
+        private Label label14;
+        private TextBox textBox13;
+        private Label label13;
+        private CheckBox checkBox2;
+        private CheckBox checkBox1;
+        private Label label15;
+        private ComboBox comboBox5;
     }
 }

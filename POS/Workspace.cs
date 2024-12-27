@@ -4,11 +4,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+
 
 namespace POS
 {
@@ -54,10 +56,17 @@ namespace POS
             {
                 txtDiscount.ForeColor = Color.Black;
             }
+
+
+
+
         }
 
 
-        public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+        
+
+       public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+        SqlCommand cmd;
         private double CalculateTotal(double currentTotal, string discountType, double discountAmount)
         {
             double newTotal = currentTotal; // Use current total
@@ -330,6 +339,222 @@ namespace POS
     }
 }
 
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void textBox8_TextChanged(object sender, EventArgs e)
+        {
+           
+
+        }
+
+        private void txtDiscount_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox8_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            String Pass = "1234";
+            decimal dis = 0;
+            decimal total = 0;
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+
+                
+                decimal.TryParse(txtDiscount.Text, out dis);
+                decimal.TryParse(lblTotal.Text, out total);
+
+                if (textBox8.Text == Pass)
+                {
+
+                    decimal result = total + (total * dis) / 100;
+                    lblTotal.Text = result.ToString("F2");
+                }
+                else
+                {
+                    MessageBox.Show("Admin Password is wrong");
+                }
+            }
+        }
+
         
+        
+        private void LoadNextDonorID()
+{
+    try
+    {
+        using (SqlConnection conn = new SqlConnection(connectionString))
+        {
+            conn.Open();
+            using (SqlCommand cmd = new SqlCommand("SELECT ISNULL(MAX(bill_id), 999999) + 1 FROM Billings", conn))
+            {
+                object result = cmd.ExecuteScalar();
+                int nextID = (result != null && result != DBNull.Value) ? Convert.ToInt32(result) : 1000; // Default if null
+                label4.Text = nextID.ToString();
+            }
+        }
+    }
+    catch (Exception ex)
+    {
+        MessageBox.Show($"Error loading next  ID: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+    }
+}
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            LoadNextDonorID();
+
+
+
+
+
+            textBox9.Text = newTotal.ToString();
+            textBox10.Text = txtDiscount.Text;
+            textBox11.Text = lblTotal.Text;
+            textBox12.Focus();
+
+            
+
+            
+
+        }
+
+        private void textBox12_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            decimal balance = 0;
+            decimal r_amount = 0;
+            decimal t_amount = 0;
+            decimal.TryParse(textBox11.Text, out t_amount);
+            decimal.TryParse(textBox12.Text, out r_amount);
+
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                balance = r_amount - t_amount;
+                textBox13.Text = balance.ToString("F2");
+            }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            textBox12.Focus();
+            checkBox1.Checked = true;
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            textBox12.Text = null;
+            textBox13.Text = null;
+            checkBox2.Checked = true;
+
+            
+        }
+
+        private void button11_Click_1(object sender, EventArgs e)
+        {
+
+            long b_id = 0;
+            long.TryParse(label4.Text, out b_id);
+            String Cashier = comboBox5.Text;
+            decimal b_amount = 0;
+            decimal.TryParse(textBox9.Text, out b_amount);
+            decimal discount = 0;
+            decimal.TryParse(textBox10.Text, out discount);
+            decimal recive = 0;
+            decimal.TryParse(textBox12.Text, out recive);
+            decimal bal = 0;
+            decimal.TryParse(textBox13.Text, out bal);
+            decimal cash = 0;
+            decimal card = 0;
+            if (checkBox1.Checked)
+            {
+                decimal.TryParse(textBox11.Text, out cash);
+            } else if (checkBox2.Checked) {
+                decimal.TryParse(textBox11.Text, out card);
+            }
+
+            String station = comboBox4.Text;
+            
+
+
+
+
+
+            String Query = "INSERT INTO Billings (bill_id,c_name,bill_amount,discount,r_amount,balance,cash,card,station) VALUES (@bill_id,@c_name,@bill_amount,@discount,@r_amount,@balance,@cash,@card,@station)";
+            string itemBillingQuery = "INSERT INTO item_wise_billings (bil_id, p_code, p_name, quentity, unit_price, total) VALUES (@bill_id, @p_code, @p_name, @quantity, @unit_price, @total)";
+            using (SqlConnection con = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    con.Open();
+                    using (SqlCommand com = new SqlCommand(Query, con))
+                    {
+                        
+                        com.Parameters.AddWithValue("@bill_id",b_id);
+                        com.Parameters.AddWithValue("@c_name",Cashier);
+                        com.Parameters.AddWithValue("@bill_amount",b_amount);
+                        com.Parameters.AddWithValue("@discount",discount);
+                        com.Parameters.AddWithValue("@r_amount",recive);
+                        com.Parameters.AddWithValue("@balance",bal);
+                        com.Parameters.AddWithValue("@cash",cash);
+                        com.Parameters.AddWithValue("@card",card);
+                        com.Parameters.AddWithValue("@station",station);
+
+
+                        int result = com.ExecuteNonQuery();
+
+                        if (result <= 0)
+                        {
+                           
+                            MessageBox.Show("Failed to insert into Billings table.");
+                            return;
+                        }
+                        
+
+
+                    }
+                    for (int i = 0; i < listBox1.Items.Count; i++)
+                    {
+                        using (SqlCommand cmdItemBilling = new SqlCommand(itemBillingQuery, con))
+                        {
+                            cmdItemBilling.Parameters.AddWithValue("@bill_id", b_id);
+                            cmdItemBilling.Parameters.AddWithValue("@p_code", listBox1.Items[i].ToString());
+                            cmdItemBilling.Parameters.AddWithValue("@p_name", listBox2.Items[i].ToString());
+                            cmdItemBilling.Parameters.AddWithValue("@quantity", Convert.ToDecimal(listBox3.Items[i].ToString()));
+                            cmdItemBilling.Parameters.AddWithValue("@unit_price", Convert.ToDecimal(listBox4.Items[i].ToString()));
+                            cmdItemBilling.Parameters.AddWithValue("@total", Convert.ToDecimal(listBox5.Items[i].ToString()));
+
+                            cmdItemBilling.ExecuteNonQuery();
+                        }
+                    }
+
+                    MessageBox.Show("Billing and item-wise billing successful.");
+                    this.Close();
+                    Workspace workspace = new Workspace();
+                    workspace.Show();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+                finally
+                {
+                    con.Close();
+                }
+            
+            }
+
+
+            
+            
+        }
+
+        private void label15_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
