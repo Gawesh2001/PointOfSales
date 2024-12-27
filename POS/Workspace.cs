@@ -65,7 +65,7 @@ namespace POS
 
         
 
-        public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+       public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
         SqlCommand cmd;
         private double CalculateTotal(double currentTotal, string discountType, double discountAmount)
         {
