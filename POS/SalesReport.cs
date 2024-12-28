@@ -22,13 +22,13 @@ namespace POS
         public SalesReport()
         {
             InitializeComponent();
-            LoadSalesReport();
+            //LoadSalesReport();
         }
         private void LoadSalesReport()
         {
-            string query = "SELECT p_id AS [Product ID], bar_code AS [Barcode], p_name AS [Product Name], " +
-                           "quantity AS [Quantity], expire_date AS [Expiration Date], " +
-                           "p_cost AS [Cost Price], p_price AS [Selling Price] FROM Products";
+            string query = "SELECT bill_id AS [Bill ID], c_name AS [Cashier], bill_amount AS [Sale], " +
+                           "discount AS [Discounts], cash AS [Cash Settled], " +
+                           "card AS [Card Settled], date AS [Bill Date] FROM Billings";
             LoadData(query);
 
             // Customize the DataGridView for a modern look
