@@ -26,14 +26,50 @@ namespace POS
         }
         private void LoadSalesReport()
         {
+            // Initialize variables to store the total cash and card values
+            decimal totalCash = 0;
+            decimal totalCard = 0;
+
+            // Query to fetch the data
             string query = "SELECT bill_id AS [Bill ID], c_name AS [Cashier], bill_amount AS [Sale], " +
                            "discount AS [Discounts], cash AS [Cash Settled], " +
                            "card AS [Card Settled], date AS [Bill Date] FROM Billings";
-            LoadData(query);
 
-            // Customize the DataGridView for a modern look
-            CustomizeDataGridView(dataGridView1);
+            // Create a connection and data adapter to fetch data from the database
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                // Open the connection
+                conn.Open();
+
+                // Create the data adapter to execute the query and fill the DataTable
+                SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+
+                // Create a DataTable to hold the query result
+                DataTable dataTable = new DataTable();
+
+                // Fill the DataTable with the query result
+                adapter.Fill(dataTable);
+
+                // Set the DataGridView data source
+                dataGridView1.DataSource = dataTable;
+
+                // Loop through the rows of the DataTable to calculate totals for cash and card
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    // Add the cash and card values from each row to the totals
+                    totalCash += Convert.ToDecimal(row["Cash Settled"]);
+                    totalCard += Convert.ToDecimal(row["Card Settled"]);
+                }
+
+                // Display the totals (optional: you could display them in labels or some other controls)
+                label2.Text = "Total Cash RS: " + totalCash.ToString("F2");
+                label3.Text = "Total Card RS: " + totalCard.ToString("F2");
+                label4.Text = "Total Sale RS: " + (totalCard + totalCash).ToString("F2");
+                // Customize the DataGridView for a modern look
+                CustomizeDataGridView(dataGridView1);
+            }
         }
+
 
         private void CustomizeDataGridView(DataGridView dgv)
         {
@@ -55,10 +91,28 @@ namespace POS
             dgv.DefaultCellStyle.Font = new Font("Segoe UI", 10);
             dgv.ColumnHeadersDefaultCellStyle.Font = new Font("Segoe UI", 11, FontStyle.Bold);
 
-            // Row Height
-            dgv.RowTemplate.Height = 40;
+            // Row Height (Reduced column height)
+            dgv.RowTemplate.Height = 30;  // Reduced height for rows
             dgv.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+
+            // Scrolling Option
+            dgv.ScrollBars = ScrollBars.Both; // Enables both horizontal and vertical scrolling
+            dgv.AutoSizeRowsMode = DataGridViewAutoSizeRowsMode.None; // Avoid automatic resizing of rows
+
+            // Force the DataGridView layout update to apply scrollbars immediately
+            dgv.PerformLayout();  // Force layout update for immediate visual changes
+
+            // Ensure the container has scrolling enabled
+            if (dgv.Parent is Panel panel)
+            {
+                panel.AutoScroll = true;  // This allows scrolling for the parent container if needed
+            }
+
+            // Ensure the DataGridView has enough height to display scrollbars
+            dgv.Height = 450;  // Set a fixed height for the DataGridView if not set already
         }
+
+
 
         // Method to Load Inventory Report
         private void LoadInventoryReport()
@@ -142,14 +196,12 @@ namespace POS
 
                 // Determine the title based on which button is enabled
                 string Title = label1.Text;
-                
 
                 // Create title paragraph with the selected font
                 Paragraph titleParagraph = new Paragraph(Title, titleFont);
                 titleParagraph.Alignment = Element.ALIGN_CENTER; // Center the title
                 titleParagraph.SpacingAfter = 15f; // Space after title
                 document.Add(titleParagraph); // Add the title to the document
-
 
                 // Create a table with the number of columns in the DataGridView
                 PdfPTable pdfTable = new PdfPTable(gridView.Columns.Count)
@@ -194,6 +246,47 @@ namespace POS
 
                 // Add the table to the document
                 document.Add(pdfTable);
+
+                // Add the labels (label2, label3, label4) at the bottom of the page
+                // Create a table with 3 columns for the bottom labels
+                PdfPTable bottomTable = new PdfPTable(3)
+                {
+                    WidthPercentage = 100 // Fit the table to the page width
+                };
+
+                if (btnLoadSalesReport.Enabled)
+                {
+                    // Add left-aligned label (label2)
+                    PdfPCell leftCell = new PdfPCell(new Phrase(label2.Text, cellFont))
+                    {
+                        HorizontalAlignment = Element.ALIGN_LEFT,
+                        Padding = 5,
+                        Border = iTextSharp.text.Rectangle.NO_BORDER
+                    };
+                    bottomTable.AddCell(leftCell);
+
+                    // Add center-aligned label (label3)
+                    PdfPCell centerCell = new PdfPCell(new Phrase(label3.Text, cellFont))
+                    {
+                        HorizontalAlignment = Element.ALIGN_CENTER,
+                        Padding = 5,
+                        Border = iTextSharp.text.Rectangle.NO_BORDER
+                    };
+                    bottomTable.AddCell(centerCell);
+
+                    // Add right-aligned label (label4)
+                    PdfPCell rightCell = new PdfPCell(new Phrase(label4.Text, cellFont))
+                    {
+                        HorizontalAlignment = Element.ALIGN_RIGHT,
+                        Padding = 5,
+                        Border = iTextSharp.text.Rectangle.NO_BORDER
+                    };
+                    bottomTable.AddCell(rightCell);
+                }
+                
+
+                // Add the bottom table to the document
+                document.Add(bottomTable);
 
                 // Close the document
                 document.Close();
