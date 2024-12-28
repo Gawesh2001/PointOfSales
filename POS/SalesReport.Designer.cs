@@ -40,6 +40,7 @@
             // dataGridView1
             // 
             this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -57,23 +58,25 @@
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 308);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 216);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(1650, 432);
+            this.dataGridView1.Size = new System.Drawing.Size(1650, 994);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnLoadSalesReport
             // 
             this.btnLoadSalesReport.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLoadSalesReport.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadSalesReport.FlatAppearance.BorderSize = 0;
+            this.btnLoadSalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadSalesReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadSalesReport.ForeColor = System.Drawing.Color.White;
-            this.btnLoadSalesReport.Location = new System.Drawing.Point(420, 120);
+            this.btnLoadSalesReport.Location = new System.Drawing.Point(12, 27);
             this.btnLoadSalesReport.Name = "btnLoadSalesReport";
-            this.btnLoadSalesReport.Size = new System.Drawing.Size(194, 93);
+            this.btnLoadSalesReport.Size = new System.Drawing.Size(327, 65);
             this.btnLoadSalesReport.TabIndex = 1;
             this.btnLoadSalesReport.Text = "Load Sales Report";
             this.btnLoadSalesReport.UseVisualStyleBackColor = false;
@@ -82,11 +85,14 @@
             // btnLoadInventoryReport
             // 
             this.btnLoadInventoryReport.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnLoadInventoryReport.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadInventoryReport.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadInventoryReport.FlatAppearance.BorderSize = 0;
+            this.btnLoadInventoryReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLoadInventoryReport.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLoadInventoryReport.ForeColor = System.Drawing.Color.White;
-            this.btnLoadInventoryReport.Location = new System.Drawing.Point(689, 120);
+            this.btnLoadInventoryReport.Location = new System.Drawing.Point(345, 27);
             this.btnLoadInventoryReport.Name = "btnLoadInventoryReport";
-            this.btnLoadInventoryReport.Size = new System.Drawing.Size(191, 93);
+            this.btnLoadInventoryReport.Size = new System.Drawing.Size(324, 65);
             this.btnLoadInventoryReport.TabIndex = 2;
             this.btnLoadInventoryReport.Text = "Load Inventory Report";
             this.btnLoadInventoryReport.UseVisualStyleBackColor = false;
@@ -94,10 +100,12 @@
             // 
             // btnExportToPdf
             // 
-            this.btnExportToPdf.BackColor = System.Drawing.SystemColors.HotTrack;
-            this.btnExportToPdf.Font = new System.Drawing.Font("Aharoni", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExportToPdf.BackColor = System.Drawing.Color.Red;
+            this.btnExportToPdf.FlatAppearance.BorderSize = 0;
+            this.btnExportToPdf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnExportToPdf.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExportToPdf.ForeColor = System.Drawing.Color.White;
-            this.btnExportToPdf.Location = new System.Drawing.Point(968, 120);
+            this.btnExportToPdf.Location = new System.Drawing.Point(1434, 27);
             this.btnExportToPdf.Name = "btnExportToPdf";
             this.btnExportToPdf.Size = new System.Drawing.Size(185, 93);
             this.btnExportToPdf.TabIndex = 3;
@@ -109,15 +117,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(1650, 740);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(1651, 1055);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnExportToPdf);
             this.Controls.Add(this.btnLoadInventoryReport);
             this.Controls.Add(this.btnLoadSalesReport);
-            this.Controls.Add(this.dataGridView1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "SalesReport";
-            this.Text = "55";
+            this.ShowIcon = false;
+            this.Text = "Reports";
             this.Load += new System.EventHandler(this.SalesReport_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
