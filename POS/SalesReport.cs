@@ -141,15 +141,8 @@ namespace POS
                 iTextSharp.text.Font titleFont = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16);
 
                 // Determine the title based on which button is enabled
-                string Title = "";
-                if (btnLoadInventoryReport.Enabled)
-                {
-                    Title = "Inventory report";
-                }
-                else if (btnLoadSalesReport.Enabled)
-                {
-                    Title = "Sales Report";
-                }
+                string Title = label1.Text;
+                
 
                 // Create title paragraph with the selected font
                 Paragraph titleParagraph = new Paragraph(Title, titleFont);
@@ -226,11 +219,13 @@ namespace POS
 
         private void btnLoadSalesReport_Click_1(object sender, EventArgs e)
         {
+            label1.Text = "Sales Report";
             LoadSalesReport();
         }
 
         private void btnLoadInventoryReport_Click_1(object sender, EventArgs e)
         {
+            label1.Text = "Inventory Report";
             LoadInventoryReport();
         }
 
