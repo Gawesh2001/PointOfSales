@@ -678,73 +678,125 @@ namespace POS
         {
             try
             {
+                // Set up a page size for POS printers (3 inches x 8.5 inches)
+                Document document = new Document(new iTextSharp.text.Rectangle(216f, 792f), 5f, 5f, 5f, 5f); // 3" x 8.5"
                 string filePath = "receipt_" + billId + ".pdf";
-                Document document = new Document(PageSize.A4);
                 PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
                 document.Open();
 
-                // Add Title
-                Paragraph title = new Paragraph("Receipt for Bill ID: " + billId)
+                // Use a smaller font size (e.g., 7 instead of 9 to reduce layout size)
+                iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 7);
+
+                // Add Market Name at the top (Pic And Go)
+                Paragraph marketName = new Paragraph("Pic And Go", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16))
                 {
                     Alignment = Element.ALIGN_CENTER,
-                    SpacingAfter = 15f
+                    SpacingAfter = 5f
+                };
+                document.Add(marketName);
+
+                // Optionally, add an image logo if you have one (uncomment and adjust the file path)
+                // Image logo = Image.GetInstance("logo.png");
+                // logo.ScaleToFit(80f, 80f); // Adjust logo size for the compact layout
+                // logo.Alignment = Element.ALIGN_CENTER;
+                // document.Add(logo);
+
+                // Add Bill ID as a title
+                Paragraph title = new Paragraph("Receipt for Bill ID: " + billId, font)
+                {
+                    Alignment = Element.ALIGN_CENTER,
+                    SpacingAfter = 8f
                 };
                 document.Add(title);
 
                 // Add Date
-                Paragraph date = new Paragraph("Date: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                Paragraph date = new Paragraph("Date: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"), font)
                 {
-                    Alignment = Element.ALIGN_LEFT,
-                    SpacingAfter = 15f
+                    Alignment = Element.ALIGN_CENTER,
+                    SpacingAfter = 8f
                 };
                 document.Add(date);
 
-                // Create table with 4 columns: Item, Quantity, Unit Price, Total
-                PdfPTable table = new PdfPTable(4)
+
+
+
+
+                // Create a table with 3 columns: Description, Quantity, Price (RS:)
+                PdfPTable table = new PdfPTable(3)
                 {
-                    WidthPercentage = 100
+                    WidthPercentage = 100 // Make sure the table uses full width
                 };
 
-                // Add headers
-                table.AddCell("Item Name");
-                table.AddCell("Quantity");
-                table.AddCell("Unit Price");
-                table.AddCell("Total");
+                // Set the table's column widths (optional)
+                table.SetWidths(new float[] { 0.6f, 0.2f, 0.2f });
 
-                // Add data rows
+                // Set the border to 0 to make it invisible
+                table.DefaultCell.Border = 0;
+
+                // Add header row with descriptions for each column
+                table.AddCell(new Phrase("Description", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));  // Bold for headers
+                table.AddCell(new Phrase("Qty", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));
+                table.AddCell(new Phrase("Price (RS:)", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));
+
+                // Add the item details to the table
                 for (int i = 0; i < listBox1.Items.Count; i++)
                 {
                     string itemName = listBox2.Items[i].ToString();
                     decimal quantity = Convert.ToDecimal(listBox3.Items[i].ToString());
-                    decimal unitPrice = Convert.ToDecimal(listBox4.Items[i].ToString());
                     decimal total = Convert.ToDecimal(listBox5.Items[i].ToString());
 
-                    table.AddCell(itemName);
-                    table.AddCell(quantity.ToString());
-                    table.AddCell(unitPrice.ToString("C"));
-                    table.AddCell(total.ToString("C"));
-                }
+                    // Add the Item Name to the first column (left-aligned)
+                    table.AddCell(new Phrase(string.Format("{0,-15}", itemName), font));
 
-                // Add Total
-                table.AddCell("");  // Empty cell
-                table.AddCell("");  // Empty cell
-                table.AddCell("Total:");
-                table.AddCell(lblTotal.Text);  // Assuming lblTotal contains the total amount
+                    // Add Quantity to the second column (center-aligned)
+                    table.AddCell(new Phrase(string.Format("{0,3}", quantity), font));
+
+                    // Add Price (RS:) to the third column (right-aligned)
+                    table.AddCell(new Phrase(string.Format("{0,9}", total), font));
+
+                }
 
                 // Add the table to the document
                 document.Add(table);
 
+
+                // Add Total Amount
+                Paragraph totalParagraph = new Paragraph(string.Format("Total: RS:{0,9}", Convert.ToDecimal(lblTotal.Text)), font)
+                {
+                    Alignment = Element.ALIGN_RIGHT,
+                    SpacingBefore = 5f
+                };
+                document.Add(totalParagraph);
+
+
+                // Add Description at the bottom of the receipt
+                Paragraph description = new Paragraph("\nThank you for shopping with us! \n" +
+                                                      "For inquiries, contact us: 075-607-9914\n" +
+                                                      "No returns accepted. All sales are final.",
+                                                      FontFactory.GetFont(FontFactory.HELVETICA, 10))
+                {
+                    Alignment = Element.ALIGN_CENTER,
+                    SpacingBefore = 10f,
+                    SpacingAfter = 10f
+                };
+                document.Add(description);
+
                 // Close the document
                 document.Close();
 
+                // Show success message
                 MessageBox.Show("PDF Receipt generated successfully.");
+
+                // Open the generated PDF file
                 System.Diagnostics.Process.Start(filePath);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("An error occurred while generating the PDF receipt: " + ex.Message);
             }
         }
+
 
         private void label15_Click(object sender, EventArgs e)
         {
