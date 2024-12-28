@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Drawing.Text;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -16,6 +17,7 @@ namespace POS
 {
     public partial class Workspace : Form
     {
+        
         public Workspace()
         {
             InitializeComponent();
@@ -139,7 +141,7 @@ namespace POS
 
         private void Workspace_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         
@@ -147,6 +149,9 @@ namespace POS
         {
             if (e.KeyCode == Keys.Enter)
             {
+
+
+
                 long bar_code;
                 if (!long.TryParse(textBox3.Text, out bar_code))
                 {
@@ -154,6 +159,44 @@ namespace POS
                     textBox3.Focus();
                     return;
                 }
+
+                if (comboBox5.Text.Length == 0)
+                {
+                    MessageBox.Show("Select a Cashier Name before proceeding.");
+                    comboBox5.Focus();
+                    return;
+                }
+
+                // Check if the cashier is signed in
+                string checkQuery = "SELECT COUNT(*) FROM Sign_in WHERE c_name = @c_name AND sign_in = 'ON' AND sign_off IS NULL";
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                        {
+                            checkCmd.Parameters.AddWithValue("@c_name", comboBox5.Text);
+
+                            int isSignedIn = (int)checkCmd.ExecuteScalar();
+
+                            if (isSignedIn == 0)
+                            {
+                                MessageBox.Show("The selected cashier is not signed in. Please sign in before proceeding.");
+                                textBox3.Clear();
+                                comboBox5.Focus();
+                                return;
+                            }
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("An error occurred while checking cashier sign-in: " + ex.Message);
+                        return;
+                    }
+                }
+
 
                 String query = "SELECT p_name, quantity, p_price FROM Products WHERE bar_code = @bar_code";
 
@@ -297,8 +340,7 @@ namespace POS
 
         private void button9_Click(object sender, EventArgs e)
         {
-            DashBoard dashBoard = new DashBoard();
-            dashBoard.Show();
+            
         }
 
         private void button7_Click(object sender, EventArgs e)
@@ -406,6 +448,43 @@ namespace POS
 
         private void button5_Click(object sender, EventArgs e)
         {
+            if (comboBox5.Text.Length == 0)
+            {
+                MessageBox.Show("Select a Cashier Name before proceeding.");
+                comboBox5.Focus();
+                return;
+            }
+
+            // Check if the cashier is signed in
+            string checkQuery = "SELECT COUNT(*) FROM Sign_in WHERE c_name = @c_name AND sign_in = 'ON' AND sign_off IS NULL";
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, conn))
+                    {
+                        checkCmd.Parameters.AddWithValue("@c_name", comboBox5.Text);
+
+                        int isSignedIn = (int)checkCmd.ExecuteScalar();
+
+                        if (isSignedIn == 0)
+                        {
+                            MessageBox.Show("The selected cashier is not signed in. Please sign in before proceeding.");
+                            textBox3.Clear();
+                            comboBox5.Focus();
+                            return;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred while checking cashier sign-in: " + ex.Message);
+                    return;
+                }
+            }
+
             LoadNextDonorID();
 
 
@@ -518,6 +597,8 @@ namespace POS
                     }
                     for (int i = 0; i < listBox1.Items.Count; i++)
                     {
+                        string p_code = listBox1.Items[i].ToString();
+                        decimal quantity = Convert.ToDecimal(listBox3.Items[i].ToString());
                         using (SqlCommand cmdItemBilling = new SqlCommand(itemBillingQuery, con))
                         {
                             cmdItemBilling.Parameters.AddWithValue("@bill_id", b_id);
@@ -529,12 +610,49 @@ namespace POS
 
                             cmdItemBilling.ExecuteNonQuery();
                         }
+
+                        string updateProductQuery = "UPDATE Products SET quantity = quantity - @quantity WHERE bar_code = @bar_code";
+
+                        using (SqlCommand cmdUpdateProduct = new SqlCommand(updateProductQuery, con))
+                        {
+                            cmdUpdateProduct.Parameters.AddWithValue("@quantity", quantity);
+                            cmdUpdateProduct.Parameters.AddWithValue("@bar_code", p_code);
+
+                            int updateResult = cmdUpdateProduct.ExecuteNonQuery();
+
+                            if (updateResult <= 0)
+                            {
+                                MessageBox.Show($"Failed to update quantity for product with bar_code: {p_code}");
+                                return;
+                            }
+                        }
                     }
 
-                    MessageBox.Show("Billing and item-wise billing successful.");
-                    this.Close();
-                    Workspace workspace = new Workspace();
-                    workspace.Show();
+                    MessageBox.Show("Billing successful.");
+                    //this.Close();
+                    //Workspace workspace = new Workspace();
+                    //workspace.Show();
+
+
+                    listBox1.Items.Clear();
+                    listBox2.Items.Clear();
+                    listBox3.Items.Clear();
+                    listBox4.Items.Clear();
+                    listBox5.Items.Clear();
+                    label4.Text = string.Empty;
+                    txtDiscount.Text = string.Empty;
+                    textBox8.Text = string.Empty;
+                    lblTotal.Text = string.Empty;
+                    textBox2.Text = string.Empty;
+                    textBox9.Text = string.Empty;
+                    textBox10.Text = string.Empty;
+                    textBox11.Text = string.Empty;
+                    textBox12.Text = string.Empty;
+                    textBox13.Text = string.Empty;
+                    checkBox1.Checked = false;
+                    checkBox2.Checked = false;
+                    textBox3.Focus();
+
                 }
                 catch (Exception ex)
                 {
@@ -556,5 +674,191 @@ namespace POS
         {
 
         }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        
+          
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            
+            if (comboBox4.Text.Length == 0) {
+                MessageBox.Show("Select A Station");
+                comboBox4.Focus();
+            }
+            if (comboBox5.Text.Length == 0)
+            {
+                MessageBox.Show("Select A Cashire Name");
+                comboBox5.Focus();
+            }
+            if (textBox14.Text.Length == 0)
+            {
+                MessageBox.Show("Enter Your Cash Drawer Amount");
+                textBox14.Focus();
+            }
+            
+            if (comboBox5.Text == "Cashier_Trix" && textBox15.Text == "123")
+            { 
+                sign_in();
+            }else if (comboBox5.Text == "Cashier_Pheonix" && textBox15.Text == "456")
+            {
+                sign_in();
+            }
+            else if (comboBox5.Text == "Cashire_Nick" && textBox15.Text == "789")
+            {
+                sign_in();
+            }
+            else if (comboBox5.Text == "Cashire_Ted" && textBox15.Text == "741")
+            {
+                sign_in();
+            }
+            else if (comboBox5.Text == "Cashire_Tim" && textBox15.Text == "852")
+            {
+                sign_in();
+            }
+            else if (comboBox5.Text == "Cashire_Tize" && textBox15.Text == "963")
+            {
+                sign_in();
+            }
+            else if (comboBox5.Text == "Admin" && textBox15.Text == "123456")
+            {
+                sign_in();
+            }else
+            {
+                MessageBox.Show("Password Is Wrong");
+            }
+
+
+        }
+        private void sign_in()
+        {
+
+            string query = "INSERT INTO Sign_in (station, c_name, d_amount, sign_in, sign_in_time, sign_off, sign_off_time) " +
+              "VALUES (@station, @c_name, @d_amount, @sign_in, @sign_in_time, @sign_off, @sign_off_time)";
+
+            using (SqlConnection conn = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    conn.Open();
+                    using (SqlCommand cmd = new SqlCommand(query, conn))
+                    {
+                        // Add parameters
+                        cmd.Parameters.AddWithValue("@station", comboBox4.Text);
+                        cmd.Parameters.AddWithValue("@c_name", comboBox5.Text);
+                        cmd.Parameters.AddWithValue("@d_amount", Convert.ToDecimal(textBox14.Text));
+                        cmd.Parameters.AddWithValue("@sign_in", "ON");
+                        cmd.Parameters.AddWithValue("@sign_in_time", DateTime.Now);
+                        cmd.Parameters.AddWithValue("@sign_off", DBNull.Value); 
+                        cmd.Parameters.AddWithValue("@sign_off_time", DBNull.Value); 
+
+                        // Execute the query
+                        int result = cmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show(comboBox5.Text + " Signed In Successfully");
+                            textBox3.Focus();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to Sign In. Please try again.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void button13_Click(object sender, EventArgs e)
+        {
+            if (comboBox5.Text.Length == 0)
+            {
+                MessageBox.Show("Select a Cashier Name");
+                comboBox5.Focus();
+                return;
+            }
+
+            
+            string checkQuery = "SELECT COUNT(*) FROM Sign_in WHERE c_name = @c_name AND sign_in = 'ON'";
+            string updateQuery = "UPDATE Sign_in " +
+                                 "SET sign_off = @sign_off, sign_off_time = @sign_off_time " +
+                                 "WHERE c_name = @c_name AND sign_in = 'ON'";
+
+            using (SqlConnection co = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    co.Open();
+
+                    // Check if the cashier is signed in
+                    using (SqlCommand checkCmd = new SqlCommand(checkQuery, co))
+                    {
+                        checkCmd.Parameters.AddWithValue("@c_name", comboBox5.Text);
+
+                        int count = (int)checkCmd.ExecuteScalar();
+                        if (count == 0)
+                        {
+                            MessageBox.Show(comboBox5.Text + " is not signed in.");
+                            return;
+                        }
+                    }
+
+                    // Proceed to sign off
+                    using (SqlCommand updateCmd = new SqlCommand(updateQuery, co))
+                    {
+                        updateCmd.Parameters.AddWithValue("@sign_off", "OFF");
+                        updateCmd.Parameters.AddWithValue("@sign_off_time", DateTime.Now);
+                        updateCmd.Parameters.AddWithValue("@c_name", comboBox5.Text);
+
+                        int result = updateCmd.ExecuteNonQuery();
+
+                        if (result > 0)
+                        {
+                            MessageBox.Show(comboBox5.Text + " Signed Off Successfully");
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to sign off. Please try again.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            }
+        }
+
+        private void textBox3_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox5_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) { 
+             textBox14.Focus();
+            }
+        }
+
+        private void textBox15_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter) { button12.Focus(); }
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
-}
+    }
+    
+

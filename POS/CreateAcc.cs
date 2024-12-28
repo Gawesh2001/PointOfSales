@@ -91,8 +91,7 @@ namespace POS
                             {
                                 MessageBox.Show("Registation Successfull !! ");
                                 this.Close();
-                                Form1 form1 = new Form1();
-                                form1.Show();
+                                
                             }
                             else { MessageBox.Show("Registation Faild"); }
 
@@ -109,6 +108,11 @@ namespace POS
                 }
             }
             
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("            Cashier_Trix = 123\r\n            Cashier_Pheonix = 456\r\n            Cashire_Nick = 789\r\n            Cashire_Ted = 741\r\n            Cashire_Tim = 852\r\n            Cashire_Tize = 963\r\n            Admin = 123456\r\n           If Any of this password needs to be change pleas contact us;");
         }
     }
 }

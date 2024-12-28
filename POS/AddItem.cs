@@ -21,8 +21,8 @@ namespace POS
             
         }
         //public String connectionString = "Data Source=APSARA;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
-        //public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
-        public String connectionString = "Data Source=DESKTOP-EN95E81\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+        public String connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
+       // public String connectionString = "Data Source=DESKTOP-EN95E81\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
         private void AddItem_Load(object sender, EventArgs e)
         {
 

@@ -45,7 +45,7 @@ namespace POS
                         String Message = $"{textBox1.Text} Logged In";
                         MessageBox.Show(Message);
 
-                        DashBoard dashBoard = new DashBoard();
+                        DashBoard dashBoard = new DashBoard(username);
                         dashBoard.Show();
 
                     }else
