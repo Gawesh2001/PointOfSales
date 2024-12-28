@@ -1,4 +1,6 @@
-﻿using System;
+﻿using iTextSharp.text.pdf;
+using iTextSharp.text;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -629,6 +631,8 @@ namespace POS
                     }
 
                     MessageBox.Show("Billing successful.");
+                    GeneratePdfReceipt(label4.Text); // Assuming `b_id` is the bill ID
+
                     //this.Close();
                     //Workspace workspace = new Workspace();
                     //workspace.Show();
@@ -668,6 +672,78 @@ namespace POS
 
             
             
+        }
+
+        private void GeneratePdfReceipt(string billId)
+        {
+            try
+            {
+                string filePath = "receipt_" + billId + ".pdf";
+                Document document = new Document(PageSize.A4);
+                PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
+                document.Open();
+
+                // Add Title
+                Paragraph title = new Paragraph("Receipt for Bill ID: " + billId)
+                {
+                    Alignment = Element.ALIGN_CENTER,
+                    SpacingAfter = 15f
+                };
+                document.Add(title);
+
+                // Add Date
+                Paragraph date = new Paragraph("Date: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"))
+                {
+                    Alignment = Element.ALIGN_LEFT,
+                    SpacingAfter = 15f
+                };
+                document.Add(date);
+
+                // Create table with 4 columns: Item, Quantity, Unit Price, Total
+                PdfPTable table = new PdfPTable(4)
+                {
+                    WidthPercentage = 100
+                };
+
+                // Add headers
+                table.AddCell("Item Name");
+                table.AddCell("Quantity");
+                table.AddCell("Unit Price");
+                table.AddCell("Total");
+
+                // Add data rows
+                for (int i = 0; i < listBox1.Items.Count; i++)
+                {
+                    string itemName = listBox2.Items[i].ToString();
+                    decimal quantity = Convert.ToDecimal(listBox3.Items[i].ToString());
+                    decimal unitPrice = Convert.ToDecimal(listBox4.Items[i].ToString());
+                    decimal total = Convert.ToDecimal(listBox5.Items[i].ToString());
+
+                    table.AddCell(itemName);
+                    table.AddCell(quantity.ToString());
+                    table.AddCell(unitPrice.ToString("C"));
+                    table.AddCell(total.ToString("C"));
+                }
+
+                // Add Total
+                table.AddCell("");  // Empty cell
+                table.AddCell("");  // Empty cell
+                table.AddCell("Total:");
+                table.AddCell(lblTotal.Text);  // Assuming lblTotal contains the total amount
+
+                // Add the table to the document
+                document.Add(table);
+
+                // Close the document
+                document.Close();
+
+                MessageBox.Show("PDF Receipt generated successfully.");
+                System.Diagnostics.Process.Start(filePath);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while generating the PDF receipt: " + ex.Message);
+            }
         }
 
         private void label15_Click(object sender, EventArgs e)
