@@ -638,6 +638,22 @@ namespace POS
                     //workspace.Show();
 
 
+                    string updateLoyaltyPointsQuery = "UPDATE Customers SET loyality_points =  @loyality_points WHERE cus_no = @cus_no";
+                    using (SqlCommand cmdUpdateLoyalty = new SqlCommand(updateLoyaltyPointsQuery, con))
+                    {
+                        decimal newLoyaltyPoints = Convert.ToDecimal(lblItemCount.Text) + 1;
+                        cmdUpdateLoyalty.Parameters.AddWithValue("@loyality_points", newLoyaltyPoints);
+                        cmdUpdateLoyalty.Parameters.AddWithValue("@cus_no", textBox1.Text);
+
+                        int loyaltyUpdateResult = cmdUpdateLoyalty.ExecuteNonQuery();
+                        if (loyaltyUpdateResult <= 0)
+                        {
+                            MessageBox.Show("Failed to update loyalty points for the customer.");
+                        }
+                    }
+
+
+
                     listBox1.Items.Clear();
                     listBox2.Items.Clear();
                     listBox3.Items.Clear();
@@ -655,6 +671,8 @@ namespace POS
                     textBox13.Text = string.Empty;
                     checkBox1.Checked = false;
                     checkBox2.Checked = false;
+                    textBox1.Clear();
+                    lblItemCount.Text = string.Empty;
                     textBox3.Focus();
 
                 }
@@ -984,6 +1002,71 @@ namespace POS
 
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Customers customers = new Customers();
+            customers.Show();
+        }
+
+        private void textBox1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == '\r') {
+                e.Handled = true;
+                long customerNumber = Convert.ToInt64(textBox1.Text);
+
+
+
+
+                try
+                {
+                    string query = "SELECT loyality_points FROM Customers WHERE cus_no = @cus_no";
+
+                    using (SqlConnection conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        using (SqlCommand cmd = new SqlCommand(query, conn))
+                        {
+                            cmd.Parameters.AddWithValue("@cus_no", customerNumber);
+
+                            // Execute the query
+                            object result = cmd.ExecuteScalar();
+
+                            if (result != null && result != DBNull.Value)
+                            {
+                                // Update the label with the retrieved value
+                                lblItemCount.Text = Convert.ToDouble(result).ToString();
+                                
+                            }
+                            else
+                            {
+                                MessageBox.Show("No customer found with the entered number.");
+                                lblItemCount.Text = "0"; // Reset label if no match found
+                            }
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("An error occurred: " + ex.Message);
+                }
+
+            }
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+            checkBox3.Checked = true;
+            int points = Convert.ToInt32(lblItemCount.Text);
+            double payble = Convert.ToDouble(lblTotal.Text);
+
+
+            double result = payble - points;
+
+            lblTotal.Text = result.ToString();
+            
 
         }
     }

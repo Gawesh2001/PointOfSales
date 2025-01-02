@@ -42,11 +42,6 @@ namespace POS
             this.label16 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label15 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -57,7 +52,6 @@ namespace POS
             this.panel8 = new System.Windows.Forms.Panel();
             this.checkBox2 = new System.Windows.Forms.CheckBox();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.button11 = new System.Windows.Forms.Button();
             this.label14 = new System.Windows.Forms.Label();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -72,9 +66,6 @@ namespace POS
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.listBox5 = new System.Windows.Forms.ListBox();
@@ -93,11 +84,8 @@ namespace POS
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.textBox8 = new System.Windows.Forms.TextBox();
@@ -109,6 +97,20 @@ namespace POS
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.button11 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.checkBox3 = new System.Windows.Forms.CheckBox();
+            this.button14 = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -236,76 +238,6 @@ namespace POS
             this.label15.TabIndex = 8;
             this.label15.Text = "Cashier Name:";
             this.label15.Click += new System.EventHandler(this.label15_Click);
-            // 
-            // button10
-            // 
-            this.button10.BackColor = System.Drawing.Color.Chartreuse;
-            this.button10.BackgroundImage = global::POS.Properties.Resources.icons8_add_50;
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button10.Location = new System.Drawing.Point(1477, 8);
-            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(80, 72);
-            this.button10.TabIndex = 6;
-            this.button10.UseVisualStyleBackColor = false;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
-            // button9
-            // 
-            this.button9.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button9.BackgroundImage = global::POS.Properties.Resources.icons8_home_50;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.Location = new System.Drawing.Point(1298, 8);
-            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(80, 72);
-            this.button9.TabIndex = 5;
-            this.button9.UseVisualStyleBackColor = false;
-            this.button9.Visible = false;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
-            // 
-            // button8
-            // 
-            this.button8.BackColor = System.Drawing.Color.Gold;
-            this.button8.BackgroundImage = global::POS.Properties.Resources.icons8_pause_50;
-            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.Location = new System.Drawing.Point(1563, 8);
-            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(80, 72);
-            this.button8.TabIndex = 4;
-            this.button8.UseVisualStyleBackColor = false;
-            // 
-            // button7
-            // 
-            this.button7.BackColor = System.Drawing.Color.LightSlateGray;
-            this.button7.BackgroundImage = global::POS.Properties.Resources.icons8_sign_out_50;
-            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.Location = new System.Drawing.Point(1735, 10);
-            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(80, 72);
-            this.button7.TabIndex = 3;
-            this.button7.UseVisualStyleBackColor = false;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
-            // 
-            // button6
-            // 
-            this.button6.BackColor = System.Drawing.Color.Red;
-            this.button6.BackgroundImage = global::POS.Properties.Resources.icons8_cancel_50__1_;
-            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.Location = new System.Drawing.Point(1649, 8);
-            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(80, 72);
-            this.button6.TabIndex = 2;
-            this.button6.UseVisualStyleBackColor = false;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // comboBox4
             // 
@@ -443,24 +375,6 @@ namespace POS
             this.checkBox1.TabIndex = 20;
             this.checkBox1.Text = "Cash";
             this.checkBox1.UseVisualStyleBackColor = false;
-            // 
-            // button11
-            // 
-            this.button11.BackColor = System.Drawing.Color.Red;
-            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button11.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Image = global::POS.Properties.Resources.icons8_transition_both_directions_50;
-            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button11.Location = new System.Drawing.Point(377, 460);
-            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button11.Name = "button11";
-            this.button11.Padding = new System.Windows.Forms.Padding(15, 4, 5, 4);
-            this.button11.Size = new System.Drawing.Size(209, 104);
-            this.button11.TabIndex = 3;
-            this.button11.Text = "    Pay";
-            this.button11.UseVisualStyleBackColor = false;
-            this.button11.Click += new System.EventHandler(this.button11_Click_1);
             // 
             // label14
             // 
@@ -614,67 +528,16 @@ namespace POS
             this.panel5.Size = new System.Drawing.Size(667, 132);
             this.panel5.TabIndex = 0;
             // 
-            // button5
-            // 
-            this.button5.BackColor = System.Drawing.Color.Red;
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = global::POS.Properties.Resources.icons8_transition_both_directions_50;
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(10, 15);
-            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(15, 4, 5, 4);
-            this.button5.Size = new System.Drawing.Size(209, 104);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "    Close";
-            this.button5.UseVisualStyleBackColor = false;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = global::POS.Properties.Resources.icons8_card_50;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(423, 15);
-            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(10, 4, 5, 4);
-            this.button4.Size = new System.Drawing.Size(194, 104);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "     Card";
-            this.button4.UseVisualStyleBackColor = false;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.GreenYellow;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = global::POS.Properties.Resources.icons8_dollar_45;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(225, 16);
-            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(5, 4, 0, 4);
-            this.button3.Size = new System.Drawing.Size(194, 104);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "   Cash";
-            this.button3.UseVisualStyleBackColor = false;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button14);
+            this.panel1.Controls.Add(this.checkBox3);
             this.panel1.Controls.Add(this.panel6);
             this.panel1.Controls.Add(this.button2);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.lblItemCount);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.textBox1);
             this.panel1.Controls.Add(this.panel4);
@@ -876,17 +739,6 @@ namespace POS
             this.Column6.Name = "Column6";
             this.Column6.Width = 240;
             // 
-            // button2
-            // 
-            this.button2.Image = global::POS.Properties.Resources.icons8_add_30__1_;
-            this.button2.Location = new System.Drawing.Point(1187, 11);
-            this.button2.Margin = new System.Windows.Forms.Padding(0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(45, 36);
-            this.button2.TabIndex = 6;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Visible = false;
-            // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -908,26 +760,6 @@ namespace POS
             this.textBox2.Size = new System.Drawing.Size(64, 36);
             this.textBox2.TabIndex = 4;
             // 
-            // button1
-            // 
-            this.button1.Image = global::POS.Properties.Resources.icons8_add_30__1_;
-            this.button1.Location = new System.Drawing.Point(526, 13);
-            this.button1.Margin = new System.Windows.Forms.Padding(0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 36);
-            this.button1.TabIndex = 3;
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.label1.Image = global::POS.Properties.Resources.icons8_user_30__1_;
-            this.label1.Location = new System.Drawing.Point(31, 13);
-            this.label1.Margin = new System.Windows.Forms.Padding(0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 36);
-            this.label1.TabIndex = 2;
-            // 
             // textBox1
             // 
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -936,8 +768,9 @@ namespace POS
             this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(450, 36);
+            this.textBox1.Size = new System.Drawing.Size(258, 36);
             this.textBox1.TabIndex = 1;
+            this.textBox1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox1_KeyPress);
             // 
             // panel4
             // 
@@ -947,7 +780,6 @@ namespace POS
             this.panel4.Controls.Add(this.label9);
             this.panel4.Controls.Add(this.lblTotal);
             this.panel4.Controls.Add(this.label8);
-            this.panel4.Controls.Add(this.lblItemCount);
             this.panel4.Controls.Add(this.label6);
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.label3);
@@ -1016,13 +848,12 @@ namespace POS
             // 
             this.lblItemCount.AutoSize = true;
             this.lblItemCount.Font = new System.Drawing.Font("Segoe UI", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblItemCount.ForeColor = System.Drawing.Color.White;
-            this.lblItemCount.Location = new System.Drawing.Point(305, 61);
+            this.lblItemCount.ForeColor = System.Drawing.Color.Black;
+            this.lblItemCount.Location = new System.Drawing.Point(503, 16);
             this.lblItemCount.Name = "lblItemCount";
             this.lblItemCount.Size = new System.Drawing.Size(92, 31);
             this.lblItemCount.TabIndex = 3;
             this.lblItemCount.Text = "000000";
-            this.lblItemCount.Visible = false;
             // 
             // label6
             // 
@@ -1056,6 +887,200 @@ namespace POS
             this.label3.Size = new System.Drawing.Size(86, 31);
             this.label3.TabIndex = 0;
             this.label3.Text = "Bill ID:";
+            // 
+            // button2
+            // 
+            this.button2.Image = global::POS.Properties.Resources.icons8_add_30__1_;
+            this.button2.Location = new System.Drawing.Point(1187, 11);
+            this.button2.Margin = new System.Windows.Forms.Padding(0);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(45, 36);
+            this.button2.TabIndex = 6;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Visible = false;
+            // 
+            // button1
+            // 
+            this.button1.Image = global::POS.Properties.Resources.icons8_add_30__1_;
+            this.button1.Location = new System.Drawing.Point(354, 13);
+            this.button1.Margin = new System.Windows.Forms.Padding(0);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(107, 36);
+            this.button1.TabIndex = 3;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // label1
+            // 
+            this.label1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.label1.Image = global::POS.Properties.Resources.icons8_user_30__1_;
+            this.label1.Location = new System.Drawing.Point(31, 13);
+            this.label1.Margin = new System.Windows.Forms.Padding(0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(45, 36);
+            this.label1.TabIndex = 2;
+            // 
+            // button11
+            // 
+            this.button11.BackColor = System.Drawing.Color.Red;
+            this.button11.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button11.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Image = global::POS.Properties.Resources.icons8_transition_both_directions_50;
+            this.button11.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button11.Location = new System.Drawing.Point(377, 460);
+            this.button11.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button11.Name = "button11";
+            this.button11.Padding = new System.Windows.Forms.Padding(15, 4, 5, 4);
+            this.button11.Size = new System.Drawing.Size(209, 104);
+            this.button11.TabIndex = 3;
+            this.button11.Text = "    Pay";
+            this.button11.UseVisualStyleBackColor = false;
+            this.button11.Click += new System.EventHandler(this.button11_Click_1);
+            // 
+            // button5
+            // 
+            this.button5.BackColor = System.Drawing.Color.Red;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button5.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.ForeColor = System.Drawing.Color.White;
+            this.button5.Image = global::POS.Properties.Resources.icons8_transition_both_directions_50;
+            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button5.Location = new System.Drawing.Point(10, 15);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button5.Name = "button5";
+            this.button5.Padding = new System.Windows.Forms.Padding(15, 4, 5, 4);
+            this.button5.Size = new System.Drawing.Size(209, 104);
+            this.button5.TabIndex = 2;
+            this.button5.Text = "    Close";
+            this.button5.UseVisualStyleBackColor = false;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DodgerBlue;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = global::POS.Properties.Resources.icons8_card_50;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(423, 15);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(10, 4, 5, 4);
+            this.button4.Size = new System.Drawing.Size(194, 104);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "     Card";
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.GreenYellow;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.Font = new System.Drawing.Font("Segoe UI Black", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Image = global::POS.Properties.Resources.icons8_dollar_45;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button3.Location = new System.Drawing.Point(225, 16);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button3.Name = "button3";
+            this.button3.Padding = new System.Windows.Forms.Padding(5, 4, 0, 4);
+            this.button3.Size = new System.Drawing.Size(194, 104);
+            this.button3.TabIndex = 0;
+            this.button3.Text = "   Cash";
+            this.button3.UseVisualStyleBackColor = false;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button10
+            // 
+            this.button10.BackColor = System.Drawing.Color.Chartreuse;
+            this.button10.BackgroundImage = global::POS.Properties.Resources.icons8_add_50;
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button10.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button10.Location = new System.Drawing.Point(1477, 8);
+            this.button10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(80, 72);
+            this.button10.TabIndex = 6;
+            this.button10.UseVisualStyleBackColor = false;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button9.BackgroundImage = global::POS.Properties.Resources.icons8_home_50;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button9.Location = new System.Drawing.Point(1298, 8);
+            this.button9.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(80, 72);
+            this.button9.TabIndex = 5;
+            this.button9.UseVisualStyleBackColor = false;
+            this.button9.Visible = false;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.Gold;
+            this.button8.BackgroundImage = global::POS.Properties.Resources.icons8_pause_50;
+            this.button8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button8.Location = new System.Drawing.Point(1563, 8);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(80, 72);
+            this.button8.TabIndex = 4;
+            this.button8.UseVisualStyleBackColor = false;
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.LightSlateGray;
+            this.button7.BackgroundImage = global::POS.Properties.Resources.icons8_sign_out_50;
+            this.button7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button7.Location = new System.Drawing.Point(1735, 10);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(80, 72);
+            this.button7.TabIndex = 3;
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Red;
+            this.button6.BackgroundImage = global::POS.Properties.Resources.icons8_cancel_50__1_;
+            this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button6.Location = new System.Drawing.Point(1649, 8);
+            this.button6.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(80, 72);
+            this.button6.TabIndex = 2;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // checkBox3
+            // 
+            this.checkBox3.AutoSize = true;
+            this.checkBox3.Location = new System.Drawing.Point(666, 24);
+            this.checkBox3.Name = "checkBox3";
+            this.checkBox3.Size = new System.Drawing.Size(32, 20);
+            this.checkBox3.TabIndex = 9;
+            this.checkBox3.Text = " ";
+            this.checkBox3.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(723, 4);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(117, 55);
+            this.button14.TabIndex = 10;
+            this.button14.Text = "Use Points";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // Workspace
             // 
@@ -1167,5 +1192,7 @@ namespace POS
         private Label label16;
         private Label label17;
         private TextBox textBox15;
+        private Button button14;
+        private CheckBox checkBox3;
     }
 }
