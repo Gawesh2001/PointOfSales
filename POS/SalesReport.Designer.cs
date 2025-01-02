@@ -72,7 +72,7 @@
             // 
             // btnLoadSalesReport
             // 
-            this.btnLoadSalesReport.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLoadSalesReport.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLoadSalesReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadSalesReport.FlatAppearance.BorderSize = 0;
             this.btnLoadSalesReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
@@ -88,7 +88,7 @@
             // 
             // btnLoadInventoryReport
             // 
-            this.btnLoadInventoryReport.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnLoadInventoryReport.BackColor = System.Drawing.SystemColors.Highlight;
             this.btnLoadInventoryReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnLoadInventoryReport.FlatAppearance.BorderSize = 0;
             this.btnLoadInventoryReport.FlatStyle = System.Windows.Forms.FlatStyle.Flat;

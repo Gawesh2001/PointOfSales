@@ -152,7 +152,7 @@ namespace POS
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label17.ForeColor = System.Drawing.Color.White;
-            this.label17.Location = new System.Drawing.Point(807, 8);
+            this.label17.Location = new System.Drawing.Point(854, 7);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(169, 28);
             this.label17.TabIndex = 14;
@@ -160,16 +160,16 @@ namespace POS
             // 
             // textBox15
             // 
-            this.textBox15.Location = new System.Drawing.Point(810, 40);
+            this.textBox15.Location = new System.Drawing.Point(857, 39);
             this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(100, 22);
+            this.textBox15.Size = new System.Drawing.Size(166, 22);
             this.textBox15.TabIndex = 13;
             this.textBox15.UseSystemPasswordChar = true;
             this.textBox15.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBox15_KeyDown);
             // 
             // button13
             // 
-            this.button13.Location = new System.Drawing.Point(1126, 24);
+            this.button13.Location = new System.Drawing.Point(1169, 24);
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(75, 41);
             this.button13.TabIndex = 12;
@@ -179,7 +179,7 @@ namespace POS
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(1027, 25);
+            this.button12.Location = new System.Drawing.Point(1077, 23);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(75, 42);
             this.button12.TabIndex = 11;
@@ -191,7 +191,7 @@ namespace POS
             // 
             this.textBox14.Location = new System.Drawing.Point(644, 39);
             this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(100, 22);
+            this.textBox14.Size = new System.Drawing.Size(151, 22);
             this.textBox14.TabIndex = 10;
             // 
             // label16
