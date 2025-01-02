@@ -101,7 +101,10 @@ namespace POS
 
             String product_name = textBox1.Text;
 
+          
+
             int quantity;
+           
             if (int.TryParse(textBox6.Text, out quantity)) { };
 
             DateTime expire_date = dateTimePicker1.Value;
@@ -325,6 +328,8 @@ namespace POS
             {
                 try
                 {
+                    int quentity1;
+                    if (int.TryParse(textBox9.Text, out quentity1)) { };
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
@@ -332,7 +337,7 @@ namespace POS
                         cmd.Parameters.Add(new SqlParameter("@bar_code", SqlDbType.BigInt) { Value = bar_code });
                         cmd.Parameters.Add(new SqlParameter("@p_category", SqlDbType.NVarChar) { Value = product_category });
                         cmd.Parameters.Add(new SqlParameter("@p_name", SqlDbType.NVarChar) { Value = product_name });
-                        cmd.Parameters.Add(new SqlParameter("@quantity", SqlDbType.Int) { Value = quantity });
+                        cmd.Parameters.Add(new SqlParameter("@quantity", SqlDbType.Int) { Value = (quantity + quentity1) });
                         cmd.Parameters.Add(new SqlParameter("@expire_date", SqlDbType.DateTime) { Value = expire_date });
                         cmd.Parameters.Add(new SqlParameter("@p_cost", SqlDbType.Int) { Value = p_cost });
                         cmd.Parameters.Add(new SqlParameter("@p_price", SqlDbType.Int) { Value = p_price });

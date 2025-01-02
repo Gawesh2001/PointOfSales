@@ -415,7 +415,7 @@ namespace POS
                 if (textBox8.Text == Pass)
                 {
 
-                    decimal result = total + (total * dis) / 100;
+                    decimal result = total - (total * dis) / 100;
                     lblTotal.Text = result.ToString("F2");
                 }
                 else

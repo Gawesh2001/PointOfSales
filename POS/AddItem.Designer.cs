@@ -59,6 +59,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -254,6 +256,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.Controls.Add(this.label12);
+            this.panel3.Controls.Add(this.textBox9);
             this.panel3.Controls.Add(this.label11);
             this.panel3.Controls.Add(this.textBox8);
             this.panel3.Controls.Add(this.panel4);
@@ -383,6 +387,26 @@
             this.comboBox2.Size = new System.Drawing.Size(121, 24);
             this.comboBox2.TabIndex = 22;
             // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(969, 417);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(71, 22);
+            this.textBox9.TabIndex = 26;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Blue;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(653, 120);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(370, 46);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Good Receive Note";
+            this.label12.Visible = false;
+            // 
             // AddItem
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -438,5 +462,7 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.Label label12;
     }
 }
