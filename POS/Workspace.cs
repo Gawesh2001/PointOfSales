@@ -653,6 +653,26 @@ namespace POS
                     }
 
 
+                    if (checkBox3.Checked)
+                    {
+                        string deductLoyaltyPointsQuery = "UPDATE Customers SET loyality_points = loyality_points - @loyality_points WHERE cus_no = @cus_no";
+
+                        using (SqlCommand cmdDeductLoyalty = new SqlCommand(deductLoyaltyPointsQuery, con))
+                        {
+                            decimal loyaltyPointsToDeduct = Convert.ToDecimal(lblItemCount.Text); 
+                            cmdDeductLoyalty.Parameters.AddWithValue("@loyality_points", loyaltyPointsToDeduct);
+                            cmdDeductLoyalty.Parameters.AddWithValue("@cus_no", textBox1.Text);
+
+                            int loyaltyUpdateResult = cmdDeductLoyalty.ExecuteNonQuery();
+                            if (loyaltyUpdateResult <= 0)
+                            {
+                                MessageBox.Show("Failed to update loyalty points for the customer.");
+                            }
+                        }
+                    }
+
+
+
 
                     listBox1.Items.Clear();
                     listBox2.Items.Clear();
