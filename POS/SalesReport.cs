@@ -504,7 +504,7 @@ namespace POS
             }
             else
             {
-                MessageBox.Show("Invalid month and year entered. Please try again.", "Error");
+                MessageBox.Show("Invalid month & year entered. Please try again.", "Error");
             }
         
         }
