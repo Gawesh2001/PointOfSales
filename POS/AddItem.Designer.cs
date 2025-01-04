@@ -61,6 +61,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -123,7 +125,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(542, 458);
+            this.label3.Location = new System.Drawing.Point(542, 509);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(144, 29);
             this.label3.TabIndex = 8;
@@ -177,7 +179,7 @@
             // 
             // textBox4
             // 
-            this.textBox4.Location = new System.Drawing.Point(851, 501);
+            this.textBox4.Location = new System.Drawing.Point(851, 552);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(215, 22);
             this.textBox4.TabIndex = 12;
@@ -216,7 +218,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(548, 501);
+            this.label8.Location = new System.Drawing.Point(548, 552);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(151, 29);
             this.label8.TabIndex = 16;
@@ -226,7 +228,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(548, 549);
+            this.label9.Location = new System.Drawing.Point(548, 600);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(158, 29);
             this.label9.TabIndex = 17;
@@ -234,7 +236,7 @@
             // 
             // textBox5
             // 
-            this.textBox5.Location = new System.Drawing.Point(851, 549);
+            this.textBox5.Location = new System.Drawing.Point(851, 600);
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(215, 22);
             this.textBox5.TabIndex = 18;
@@ -257,6 +259,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.panel3.Controls.Add(this.label14);
+            this.panel3.Controls.Add(this.label13);
             this.panel3.Controls.Add(this.label12);
             this.panel3.Controls.Add(this.textBox9);
             this.panel3.Controls.Add(this.label11);
@@ -297,7 +301,7 @@
             // 
             // textBox9
             // 
-            this.textBox9.Location = new System.Drawing.Point(969, 417);
+            this.textBox9.Location = new System.Drawing.Point(851, 463);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(71, 22);
             this.textBox9.TabIndex = 26;
@@ -386,7 +390,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(851, 458);
+            this.dateTimePicker1.Location = new System.Drawing.Point(851, 509);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(215, 22);
             this.dateTimePicker1.TabIndex = 23;
@@ -409,6 +413,27 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(215, 24);
             this.comboBox2.TabIndex = 22;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.ForeColor = System.Drawing.Color.Red;
+            this.label13.Location = new System.Drawing.Point(956, 420);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(293, 16);
+            this.label13.TabIndex = 28;
+            this.label13.Text = "This text box is for Add quentity for a new product";
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.ForeColor = System.Drawing.Color.Red;
+            this.label14.Location = new System.Drawing.Point(956, 466);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(465, 16);
+            this.label14.TabIndex = 29;
+            this.label14.Text = "This text box is for  a exsisting product and  enter here the quentity want to ad" +
+    "d ";
             // 
             // AddItem
             // 
@@ -467,5 +492,7 @@
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label label13;
     }
 }

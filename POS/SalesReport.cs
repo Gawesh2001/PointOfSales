@@ -343,5 +343,170 @@ namespace POS
                 MessageBox.Show("No data to export.", "Info");
             }
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+
+
+        public static class InputDialog
+        {
+            public static string Show(string text, string caption, string defaultValue = "")
+            {
+                Form prompt = new Form()
+                {
+                    Width = 400,
+                    Height = 200,
+                    FormBorderStyle = FormBorderStyle.FixedDialog,
+                    Text = caption,
+                    StartPosition = FormStartPosition.CenterScreen
+                };
+
+                Label textLabel = new Label() { Left = 20, Top = 20, Text = text, Width = 340 };
+                TextBox inputBox = new TextBox() { Left = 20, Top = 50, Width = 340, Text = defaultValue };
+                Button confirmButton = new Button() { Text = "OK", Left = 200, Width = 100, Top = 100, DialogResult = DialogResult.OK };
+                Button cancelButton = new Button() { Text = "Cancel", Left = 80, Width = 100, Top = 100, DialogResult = DialogResult.Cancel };
+
+                prompt.Controls.Add(textLabel);
+                prompt.Controls.Add(inputBox);
+                prompt.Controls.Add(confirmButton);
+                prompt.Controls.Add(cancelButton);
+
+                prompt.AcceptButton = confirmButton;
+                prompt.CancelButton = cancelButton;
+
+                return prompt.ShowDialog() == DialogResult.OK ? inputBox.Text : null;
+            }
+        }
+
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            string inputDateString = InputDialog.Show(
+    "Enter the date for the report (yyyy-MM-dd):",
+    "Daily Report",
+    DateTime.Now.ToString("yyyy-MM-dd")
+);
+
+            if (DateTime.TryParse(inputDateString, out DateTime selectedDate))
+            {
+                // Query with parameterized date
+                string query = @"
+        SELECT 
+            bill_id AS [Bill ID], 
+            c_name AS [Cashier], 
+            bill_amount AS [Sale], 
+            discount AS [Discounts], 
+            cash AS [Cash Settled], 
+            card AS [Card Settled], 
+            date AS [Bill Date]
+        FROM 
+            Billings
+        WHERE 
+            CAST(date AS DATE) = @SelectedDate 
+            AND date IS NOT NULL; -- Exclude NULL values
+    ";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+
+                        using (SqlCommand command = new SqlCommand(query, conn))
+                        {
+                            // Add the parameter explicitly
+                            command.Parameters.Add(new SqlParameter("@SelectedDate", SqlDbType.Date)
+                            {
+                                Value = selectedDate.Date
+                            });
+
+                            SqlDataAdapter adapter = new SqlDataAdapter(command);
+                            DataTable dataTable = new DataTable();
+                            adapter.Fill(dataTable);
+                            dataGridView1.DataSource = dataTable;
+
+                            // Calculate totals
+                            decimal totalCash = 0;
+                            decimal totalCard = 0;
+
+                            foreach (DataRow row in dataTable.Rows)
+                            {
+                                totalCash += row["Cash Settled"] != DBNull.Value ? Convert.ToDecimal(row["Cash Settled"]) : 0;
+                                totalCard += row["Card Settled"] != DBNull.Value ? Convert.ToDecimal(row["Card Settled"]) : 0;
+                            }
+
+                            // Display totals
+                            label2.Text = $"Total Cash RS: {totalCash:F2}";
+                            label3.Text = $"Total Card RS: {totalCard:F2}";
+                            label4.Text = $"Total Sale RS: {(totalCash + totalCard):F2}";
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error loading daily report: {ex.Message}", "Error");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid date entered. Please try again.", "Error");
+            }
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            string inputMonth = InputDialog.Show("Enter the month and year for the report (MM-yyyy):", "Monthly Report", DateTime.Now.ToString("MM-yyyy"));
+
+            if (DateTime.TryParseExact(inputMonth, "MM-yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime selectedMonth))
+            {
+                string query = "SELECT bill_id AS [Bill ID], c_name AS [Cashier], bill_amount AS [Sale], \r\n  " +
+                    "     discount AS [Discounts], cash AS [Cash Settled], \r\n" +
+                    "       card AS [Card Settled], date AS [Bill Date]\r\nFROM Billings\r\nWHERE MONTH(date) = @Month \r\n" +
+                    "      AND YEAR(date) = @Year\r\n      AND date IS NOT NULL; -- Exclude NULL values\r\n";
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    try
+                    {
+                        conn.Open();
+                        SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
+                        adapter.SelectCommand.Parameters.AddWithValue("@Month", selectedMonth.Month);
+                        adapter.SelectCommand.Parameters.AddWithValue("@Year", selectedMonth.Year);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+                        dataGridView1.DataSource = dataTable;
+
+                        // Calculate totals
+                        decimal totalCash = 0;
+                        decimal totalCard = 0;
+                        foreach (DataRow row in dataTable.Rows)
+                        {
+                            totalCash += Convert.ToDecimal(row["Cash Settled"]);
+                            totalCard += Convert.ToDecimal(row["Card Settled"]);
+                        }
+
+                        // Display totals
+                        label2.Text = "Total Cash RS: " + totalCash.ToString("F2");
+                        label3.Text = "Total Card RS: " + totalCard.ToString("F2");
+                        label4.Text = "Total Sale RS: " + (totalCash + totalCard).ToString("F2");
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error loading monthly report: {ex.Message}", "Error");
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Invalid month and year entered. Please try again.", "Error");
+            }
+        
+        }
     }
 }

@@ -666,7 +666,7 @@ namespace POS
                             int loyaltyUpdateResult = cmdDeductLoyalty.ExecuteNonQuery();
                             if (loyaltyUpdateResult <= 0)
                             {
-                                MessageBox.Show("Failed to update loyalty points for the customer.");
+                               // MessageBox.Show("Failed to update loyalty points for the customer.");
                             }
                         }
                     }
@@ -823,7 +823,7 @@ namespace POS
                 document.Close();
 
                 // Show success message
-                MessageBox.Show("PDF Receipt generated successfully.");
+                //MessageBox.Show("PDF Receipt generated successfully.");
 
                 // Open the generated PDF file
                 System.Diagnostics.Process.Start(filePath);

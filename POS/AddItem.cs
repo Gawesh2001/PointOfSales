@@ -358,6 +358,7 @@ namespace POS
                             textBox5.Clear();
                             dateTimePicker1.Value = DateTime.Now;
                             textBox8.Focus();
+                            textBox9.Clear();
                         }
                         else
                         {
@@ -453,6 +454,11 @@ namespace POS
                 {
                     MessageBox.Show("Please enter a valid Bar Code.");
                     return;
+                }
+                else
+                {
+                    textBox6.ReadOnly = true;
+                    //MessageBox.Show("Bar Code is valid. Editing of TextBox6 is now disabled.");
                 }
 
                 String queryy = "SELECT p_category, p_name, quantity, expire_date, p_cost, p_price FROM Products WHERE bar_code = @bar_code";

@@ -42,8 +42,8 @@ namespace POS
                         String username = this.textBox1.Text;
                         String password = this.textBox2.Text;
 
-                        String Message = $"{textBox1.Text} Logged In";
-                        MessageBox.Show(Message);
+                       // String Message = $"{textBox1.Text} Logged In";
+                       // MessageBox.Show(Message);
 
                         DashBoard dashBoard = new DashBoard(username);
                         dashBoard.Show();
