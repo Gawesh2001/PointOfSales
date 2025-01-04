@@ -49,6 +49,8 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox7 = new System.Windows.Forms.TextBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -59,8 +61,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label12 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -243,7 +243,7 @@
             // 
             this.textBox6.Location = new System.Drawing.Point(851, 417);
             this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(215, 22);
+            this.textBox6.Size = new System.Drawing.Size(73, 22);
             this.textBox6.TabIndex = 19;
             // 
             // textBox7
@@ -283,6 +283,25 @@
             this.panel3.TabIndex = 21;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint_1);
             // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(201)))), ((int)(((byte)(242)))));
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.Color.White;
+            this.label12.Location = new System.Drawing.Point(521, 91);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(545, 46);
+            this.label12.TabIndex = 27;
+            this.label12.Text = "Manage Your Enventory Here";
+            // 
+            // textBox9
+            // 
+            this.textBox9.Location = new System.Drawing.Point(969, 417);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(71, 22);
+            this.textBox9.TabIndex = 26;
+            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -311,10 +330,11 @@
             this.panel4.Controls.Add(this.textBox2);
             this.panel4.Controls.Add(this.label10);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Location = new System.Drawing.Point(547, 53);
+            this.panel4.Location = new System.Drawing.Point(3, 3);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(519, 134);
+            this.panel4.Size = new System.Drawing.Size(396, 134);
             this.panel4.TabIndex = 22;
+            this.panel4.Visible = false;
             // 
             // button5
             // 
@@ -348,7 +368,7 @@
             this.label10.ForeColor = System.Drawing.Color.White;
             this.label10.Location = new System.Drawing.Point(20, 50);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(173, 25);
+            this.label10.Size = new System.Drawing.Size(138, 20);
             this.label10.TabIndex = 1;
             this.label10.Text = "Category Name";
             // 
@@ -359,7 +379,7 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(20, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(166, 25);
+            this.label1.Size = new System.Drawing.Size(133, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Category Code";
             this.label1.Click += new System.EventHandler(this.label1_Click_1);
@@ -389,26 +409,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(215, 24);
             this.comboBox2.TabIndex = 22;
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(969, 417);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(71, 22);
-            this.textBox9.TabIndex = 26;
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.Color.Blue;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(653, 120);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(370, 46);
-            this.label12.TabIndex = 27;
-            this.label12.Text = "Good Receive Note";
-            this.label12.Visible = false;
             // 
             // AddItem
             // 

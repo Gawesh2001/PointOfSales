@@ -328,7 +328,7 @@ namespace POS
             {
                 try
                 {
-                    int quentity1;
+                    int quentity1 = 0;
                     if (int.TryParse(textBox9.Text, out quentity1)) { };
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
