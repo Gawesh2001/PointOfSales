@@ -266,7 +266,7 @@ namespace POS
         //update stock
         private void button3_Click(object sender, EventArgs e)
         {
-            // Validate and parse inputs
+            
             if (string.IsNullOrWhiteSpace(textBox8.Text))
             {
                 MessageBox.Show("Please scan the barcode.");
@@ -333,7 +333,7 @@ namespace POS
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Add parameters explicitly
+                       
                         cmd.Parameters.Add(new SqlParameter("@bar_code", SqlDbType.BigInt) { Value = bar_code });
                         cmd.Parameters.Add(new SqlParameter("@p_category", SqlDbType.NVarChar) { Value = product_category });
                         cmd.Parameters.Add(new SqlParameter("@p_name", SqlDbType.NVarChar) { Value = product_name });
@@ -349,7 +349,7 @@ namespace POS
                         {
                             MessageBox.Show("Stock successfully updated.");
 
-                            // Clear input fields
+                           
                             textBox8.Clear();
                             comboBox2.Text = "";
                             textBox1.Clear();
@@ -477,7 +477,7 @@ namespace POS
                             {
                                 if (reader.Read())
                                 {
-                                    // Populate the fields with the fetched data
+                                    
                                     comboBox2.Text = reader["p_category"].ToString();
                                     textBox1.Text = reader["p_name"].ToString();
                                     textBox6.Text = reader["quantity"].ToString();
@@ -504,7 +504,7 @@ namespace POS
                     }
                 }
 
-                // Prevents the 'ding' sound when pressing Enter
+               
                 e.Handled = true;
                 e.SuppressKeyPress = true;
             }

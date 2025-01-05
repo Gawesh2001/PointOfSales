@@ -41,7 +41,7 @@ namespace POS
             string username = label3.Text.ToLower();
            
 
-            // Check if the user is allowed to access the SalesReport
+          
             string connectionString = "Data Source=GAWESH\\SQLEXPRESS;Initial Catalog=SuperMarket;Integrated Security=True;Encrypt=False";
             string query = "SELECT user_level FROM Users WHERE username = @username";
 
@@ -54,7 +54,7 @@ namespace POS
                     {
                         cmd.Parameters.AddWithValue("@username", username);
 
-                        // Execute the query
+                     
                         object result = cmd.ExecuteScalar();
 
                         if (result != null)

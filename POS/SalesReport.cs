@@ -30,33 +30,30 @@ namespace POS
             decimal totalCash = 0;
             decimal totalCard = 0;
 
-            // Query to fetch the data
+           
             string query = "SELECT bill_id AS [Bill ID], c_name AS [Cashier], bill_amount AS [Sale], " +
                            "discount AS [Discounts], cash AS [Cash Settled], " +
                            "card AS [Card Settled], date AS [Bill Date] FROM Billings";
 
-            // Create a connection and data adapter to fetch data from the database
+           
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
-                // Open the connection
+               
                 conn.Open();
 
-                // Create the data adapter to execute the query and fill the DataTable
+               
                 SqlDataAdapter adapter = new SqlDataAdapter(query, conn);
 
-                // Create a DataTable to hold the query result
                 DataTable dataTable = new DataTable();
 
-                // Fill the DataTable with the query result
                 adapter.Fill(dataTable);
 
-                // Set the DataGridView data source
                 dataGridView1.DataSource = dataTable;
 
-                // Loop through the rows of the DataTable to calculate totals for cash and card
+                
                 foreach (DataRow row in dataTable.Rows)
                 {
-                    // Add the cash and card values from each row to the totals
+                  
                     totalCash += Convert.ToDecimal(row["Cash Settled"]);
                     totalCard += Convert.ToDecimal(row["Card Settled"]);
                 }
@@ -65,7 +62,7 @@ namespace POS
                 label2.Text = "Total Cash RS: " + totalCash.ToString("F2");
                 label3.Text = "Total Card RS: " + totalCard.ToString("F2");
                 label4.Text = "Total Sale RS: " + (totalCard + totalCash).ToString("F2");
-                // Customize the DataGridView for a modern look
+               
                 CustomizeDataGridView(dataGridView1);
             }
         }
@@ -247,8 +244,7 @@ namespace POS
                 // Add the table to the document
                 document.Add(pdfTable);
 
-                // Add the labels (label2, label3, label4) at the bottom of the page
-                // Create a table with 3 columns for the bottom labels
+                
                 PdfPTable bottomTable = new PdfPTable(3)
                 {
                     WidthPercentage = 100 // Fit the table to the page width
@@ -386,6 +382,7 @@ namespace POS
 
         private void button1_Click(object sender, EventArgs e)
         {
+            label1.Text = "Daily Sales";
             string inputDateString = InputDialog.Show(
     "Enter the date for the report (yyyy-MM-dd):",
     "Daily Report",
@@ -394,7 +391,7 @@ namespace POS
 
             if (DateTime.TryParse(inputDateString, out DateTime selectedDate))
             {
-                // Query with parameterized date
+                
                 string query = @"
         SELECT 
             bill_id AS [Bill ID], 
@@ -419,7 +416,7 @@ namespace POS
 
                         using (SqlCommand command = new SqlCommand(query, conn))
                         {
-                            // Add the parameter explicitly
+                           
                             command.Parameters.Add(new SqlParameter("@SelectedDate", SqlDbType.Date)
                             {
                                 Value = selectedDate.Date
@@ -461,6 +458,7 @@ namespace POS
 
         private void button2_Click(object sender, EventArgs e)
         {
+            label1.Text = "Monthly Sales";
             string inputMonth = InputDialog.Show("Enter the month and year for the report (MM-yyyy):", "Monthly Report", DateTime.Now.ToString("MM-yyyy"));
 
             if (DateTime.TryParseExact(inputMonth, "MM-yyyy", null, System.Globalization.DateTimeStyles.None, out DateTime selectedMonth))

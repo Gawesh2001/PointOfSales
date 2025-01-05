@@ -18,10 +18,10 @@ namespace POS
         {
             InitializeComponent();
 
-            // Set up the password TextBox to mask input
-            txtPassword.PasswordChar = '●'; // Masking character
+           
+            txtPassword.PasswordChar = '●'; 
 
-            // Attach KeyDown event for handling Enter key
+          
             txtPassword.KeyDown += TxtPassword_KeyDown;
         }
 
@@ -37,7 +37,7 @@ namespace POS
 
         private void ValidatePassword()
         {
-            const string correctPassword = "1234"; // Replace with your password
+            const string correctPassword = "1234"; 
             if (txtPassword.Text == correctPassword)
             {
                 IsPasswordValid = true;
@@ -54,6 +54,11 @@ namespace POS
         private void btnOk_Click_1(object sender, EventArgs e)
         {
             ValidatePassword();
+        }
+
+        private void btnOk_Click_2(object sender, EventArgs e)
+        {
+
         }
     }
 

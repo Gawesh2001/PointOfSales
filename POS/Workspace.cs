@@ -105,23 +105,23 @@ namespace POS
 
 
                 // Pass the current discount values to the DiscountForm
-                discountForm.DiscountType = txtDiscount.Tag.ToString(); // Save the discount type to the Tag
+                discountForm.DiscountType = txtDiscount.Tag.ToString(); 
                 discountForm.DiscountAmount = double.Parse(txtDiscount.Text);
 
                 if (discountForm.ShowDialog() == DialogResult.OK)
                 {
-                    // Get discount details
+                    
                     string discountType = discountForm.DiscountType;
                     double discountAmount = discountForm.DiscountAmount;
 
-                    // Calculate the total with the discount
-                    double currentTotal = double.Parse(lblTotal.Text); // Get current total from the label
+             
+                    double currentTotal = double.Parse(lblTotal.Text); 
                     double newTotal = CalculateTotal(currentTotal, discountType, discountAmount);
-                    lblTotal.Text = newTotal.ToString("F2"); // Update the total label
+                    lblTotal.Text = newTotal.ToString("F2"); 
 
-                    // Update the discount display
+                   
                     txtDiscount.Text = discountAmount.ToString("F2");
-                    txtDiscount.Tag = discountType;  // Store the discount type for future use
+                    txtDiscount.Tag = discountType;  
                 }
             }
         }
@@ -522,6 +522,10 @@ namespace POS
         private void button3_Click(object sender, EventArgs e)
         {
             textBox12.Focus();
+            if (checkBox2.Checked)
+            {
+                checkBox2.Checked = false;
+            }
             checkBox1.Checked = true;
         }
 
@@ -529,9 +533,13 @@ namespace POS
         {
             textBox12.Text = null;
             textBox13.Text = null;
+            if (checkBox1.Checked)
+            {
+               checkBox1.Checked = false;
+            }
             checkBox2.Checked = true;
 
-            
+
         }
 
         private void button11_Click_1(object sender, EventArgs e)
@@ -648,7 +656,7 @@ namespace POS
                         int loyaltyUpdateResult = cmdUpdateLoyalty.ExecuteNonQuery();
                         if (loyaltyUpdateResult <= 0)
                         {
-                            MessageBox.Show("Failed to update loyalty points for the customer.");
+                          //  MessageBox.Show("Failed to update loyalty points for the customer.");
                         }
                     }
 
@@ -722,10 +730,9 @@ namespace POS
                 PdfWriter.GetInstance(document, new FileStream(filePath, FileMode.Create));
                 document.Open();
 
-                // Use a smaller font size (e.g., 7 instead of 9 to reduce layout size)
                 iTextSharp.text.Font font = FontFactory.GetFont(FontFactory.HELVETICA, 7);
 
-                // Add Market Name at the top (Pic And Go)
+             
                 Paragraph marketName = new Paragraph("Pic And Go", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 16))
                 {
                     Alignment = Element.ALIGN_CENTER,
@@ -759,24 +766,23 @@ namespace POS
 
 
 
-                // Create a table with 3 columns: Description, Quantity, Price (RS:)
+              
                 PdfPTable table = new PdfPTable(3)
                 {
-                    WidthPercentage = 100 // Make sure the table uses full width
+                    WidthPercentage = 100 
                 };
 
-                // Set the table's column widths (optional)
+               
                 table.SetWidths(new float[] { 0.6f, 0.2f, 0.2f });
 
-                // Set the border to 0 to make it invisible
+                
                 table.DefaultCell.Border = 0;
 
-                // Add header row with descriptions for each column
-                table.AddCell(new Phrase("Description", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));  // Bold for headers
+                
+                table.AddCell(new Phrase("Description", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));  
                 table.AddCell(new Phrase("Qty", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));
                 table.AddCell(new Phrase("Price (RS:)", FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 8)));
 
-                // Add the item details to the table
                 for (int i = 0; i < listBox1.Items.Count; i++)
                 {
                     string itemName = listBox2.Items[i].ToString();
@@ -798,7 +804,7 @@ namespace POS
                 document.Add(table);
 
 
-                // Add Total Amount
+           
                 Paragraph totalParagraph = new Paragraph(string.Format("Total: RS:{0,9}", Convert.ToDecimal(lblTotal.Text)), font)
                 {
                     Alignment = Element.ALIGN_RIGHT,
@@ -819,13 +825,13 @@ namespace POS
                 };
                 document.Add(description);
 
-                // Close the document
+               
                 document.Close();
 
                 // Show success message
                 //MessageBox.Show("PDF Receipt generated successfully.");
 
-                // Open the generated PDF file
+             
                 System.Diagnostics.Process.Start(filePath);
 
             }
@@ -912,7 +918,7 @@ namespace POS
                     conn.Open();
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
-                        // Add parameters
+                        
                         cmd.Parameters.AddWithValue("@station", comboBox4.Text);
                         cmd.Parameters.AddWithValue("@c_name", comboBox5.Text);
                         cmd.Parameters.AddWithValue("@d_amount", Convert.ToDecimal(textBox14.Text));
@@ -921,7 +927,7 @@ namespace POS
                         cmd.Parameters.AddWithValue("@sign_off", DBNull.Value); 
                         cmd.Parameters.AddWithValue("@sign_off_time", DBNull.Value); 
 
-                        // Execute the query
+                      
                         int result = cmd.ExecuteNonQuery();
 
                         if (result > 0)
@@ -1051,19 +1057,19 @@ namespace POS
                         {
                             cmd.Parameters.AddWithValue("@cus_no", customerNumber);
 
-                            // Execute the query
+                         
                             object result = cmd.ExecuteScalar();
 
                             if (result != null && result != DBNull.Value)
                             {
-                                // Update the label with the retrieved value
+                               
                                 lblItemCount.Text = Convert.ToDouble(result).ToString();
                                 
                             }
                             else
                             {
                                 MessageBox.Show("No customer found with the entered number.");
-                                lblItemCount.Text = "0"; // Reset label if no match found
+                                lblItemCount.Text = "0"; 
                             }
                         }
                     }
